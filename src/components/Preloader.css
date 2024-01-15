@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+.spinner {
+  color: #435560;
+  padding-top: 300px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: roboto;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.spinner span {
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+  font-size: 2rem;
+  animation: fade 1s linear 0s infinite;
+  padding-right: 1rem;
+}
+
+.completed {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 300px;
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-family: roboto;
+  font-size: 3rem;
+  color: #38ff74;
+}
+
+@keyframes bigger {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
