@@ -52,9 +52,11 @@ function Home() {
   }
 
   function moveBox(box) {
-    const randomX = Math.floor(Math.random() * window.innerWidth);
-    const randomY = Math.floor(Math.random() * window.innerHeight);
-
+    const gameContainer = document.getElementById('gameContainer');
+    if (gameContainer) {
+    const containerRect = gameContainer.getBoundingClientRect();
+    const randomX = Math.floor(Math.random() * (containerRect.width - 50));
+    const randomY = Math.floor(Math.random() * (containerRect.height - 50));
     box.style.left = `${randomX}px`;
     box.style.top = `${randomY}px`;
   }

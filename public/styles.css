@@ -150,7 +150,11 @@ body {
   background-repeat: no-repeat;
   background-image: url('./img/cs2Italy.png');
 }
-
+@media only screen and (max-width: 768px) {
+  .container {
+    background-size: contain; /* or any other style suitable for smaller screens */
+  }
+}
 .musicButton {
   position: absolute;
   bottom: 10px;
