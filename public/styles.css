@@ -65,7 +65,6 @@ body {
   margin: 0;
   text-shadow: 0 0 11px black;
   position: fixed;
-  right: 260px;
   top: 30%;
   transform: translateY(-50%);
   animation: float 6s ease-in-out infinite;
@@ -112,7 +111,6 @@ body {
 }
 .introH1:hover {
   text-shadow: 0 8px 16px rgba(218, 27, 27, 0.841); /* Brighter shadow on hover */
-  left: 260px;
 }
 .introH2:hover {
   text-shadow: 0 8px 16px rgba(218, 27, 27, 0.841); /* Brighter shadow on hover */
