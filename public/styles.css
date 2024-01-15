@@ -112,6 +112,7 @@ body {
 }
 .introH1:hover {
   text-shadow: 0 8px 16px rgba(218, 27, 27, 0.841); /* Brighter shadow on hover */
+  left: 260px;
 }
 .introH2:hover {
   text-shadow: 0 8px 16px rgba(218, 27, 27, 0.841); /* Brighter shadow on hover */
