@@ -5,7 +5,7 @@ import Header from './Header';
 import clickBox from './assetsM/click.mp3';
 import GunCursor from './GunCursor';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
-
+import powerUps from './assetsM/powerUp.mp3';
 function Home() {
   const [alive, setAlive] = useState(false);
   const [score, setScore] = useState(0);
@@ -20,6 +20,7 @@ function Home() {
   const [countDiv, setCountDiv] = useState(0);
   const handle = useFullScreenHandle();
   const [audio, SetAudio] = useState('');
+  const powerUpSound = new Audio(powerUps);
 
   // START GAME FUNCTION .. SETS  scores and time Interval & when time passes END BOOLEAN TO end game
   function startGame() {
@@ -125,6 +126,9 @@ function Home() {
           } else if (prevScore === 110) {
             setTimeHealth(prevHealth => prevHealth + 1);
             setTimeUse(prevTime => prevTime + 1);
+          } else if (prevScore === 160) {
+            setTimeHealth(prevHealth => prevHealth + 1);
+            setTimeUse(prevTime => prevTime + 1);
           }
           // HIGHLIGHTS
           if (prevScore == 20) {
@@ -136,7 +140,7 @@ function Home() {
               setMessage(null);
             }, 3000);
           } else if (prevScore == 50) {
-            setMessage('Aim God');
+            setMessage('SNIPER');
             setHighlight(true);
             highlight1.play();
             setTimeout(() => {
@@ -144,8 +148,17 @@ function Home() {
               setMessage(null);
             }, 3000);
           } else if (prevScore == 110) {
-            setMessage('GODLIKE');
+            setMessage('AIM MASTER');
             setHighlight(true);
+            powerUpSound.play();
+            setTimeout(() => {
+              setHighlight(false);
+              setMessage(null);
+            }, 3000);
+          } else if (prevScore == 160) {
+            setMessage('AIM GOD');
+            setHighlight(true);
+            powerUpSound.play();
             setTimeout(() => {
               setHighlight(false);
               setMessage(null);
@@ -217,11 +230,20 @@ function Home() {
         <Header />
         <div className="container">
           <header className="boarderScore">
+            {score >= 110 && score <= 160 && (
+              <img className="sayan" src="./img/sayan.gif" />
+            )}
+            {score >= 160 && <img className="sayan2" src="./img/sayan2.gif" />}
             <h1 className="scoreBoard">Score: {score}</h1>
             <p className="overwhelm">Enemy Overwhelm : {countDiv}</p>
             <p className="overwhelm">Remaining Time: {remainingTime} seconds</p>
-            <button className="fullscreen" onClick={handle.enter}>
-              <img src="./img/fullscreen.png" width="30px" height="30px" />
+            <button className="fullscreen1" onClick={handle.enter}>
+              <img
+                src="./img/fullscreen.png"
+                width="30px"
+                height="30px"
+                textContent="FULL SCREEN"
+              />
             </button>
             {timeUse >= 1 && (
               <div>

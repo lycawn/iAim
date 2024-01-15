@@ -40,32 +40,32 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   flex-direction: column;
   justify-content: center;
   align-items: center;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 120px; /* Adjust the gap between the cards */
+  gap: 30px; /* Adjust the gap between the cards */
   padding: 20px; /* Add some padding to the body */
 }
 
 /* INTRO GRIDS */
 .introH1 {
-  background-image: url('./img/aim.png');
+  background-image: url('./img/png-image.png');
   background-size: cover;
+  background-position: contain;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 200px;
+  width: 300px;
   text-align: left;
   font-family: 'Great Vibes', cursive;
   font-size: 6vw;
-  color: #332941;
+  color: #614983;
   margin: 0;
   text-shadow: 0 0 11px black;
   position: fixed;
-
+  right: 260px;
   top: 30%;
   transform: translateY(-50%);
   animation: float 6s ease-in-out infinite;
@@ -84,7 +84,7 @@ body {
   text-align: left;
   font-family: 'Great Vibes', cursive;
   font-size: 6vw;
-  color: #332941;
+  color: #421d75;
   margin: 0;
   text-shadow: 0 0 11px black;
   position: fixed;
@@ -193,7 +193,6 @@ body {
   opacity: 0.5;
   color: #fff;
   font-family: teko;
-  z-index: 2;
   border: none;
   cursor: pointer;
   font-size: 100px;
@@ -234,7 +233,6 @@ body {
   border: none;
   cursor: pointer;
   font-size: 100px;
-  z-index: 2;
   border-radius: 5px;
 }
 #gameOver:hover {
@@ -262,8 +260,8 @@ body {
 /* GAME  */
 .gameContainer {
   display: flex;
-  height: 100vh;
   width: 100vh;
+  height: 100vh;
   margin: 0;
 }
 /* GunCursor.css */
@@ -586,21 +584,30 @@ span {
   box-shadow: 0 0 15px black;
   border-radius: 18px;
   opacity: 0.5;
-  padding: 20px;
+  position: absolute;
+  padding: 10px;
   border: none;
-  width: 100%;
-  z-index: 3;
+  width: 100px;
+  z-index: 2;
+  left: 40px;
   margin-top: 10px;
 }
 .powerUp:hover {
   opacity: 1;
 }
 
-.fullscreen {
+.fullscreen1 {
   background: none;
   border: none;
-}
+  position: fixed;
 
+  left: 150px;
+}
+@media (max-width: 600px) {
+  .fullscreen1 {
+    left: 60px;
+  }
+}
 /* TITLE */
 
 .thirteen h1 {
@@ -642,4 +649,49 @@ span {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.sayan {
+  background-position: contain;
+  background-size: cover;
+  display: flex;
+  position: absolute;
+  top: 20px;
+  width: 100px;
+  height: 150px;
+  left: 5;
+}
+@media (max-width: 600px) {
+  .sayan {
+    background-position: contain;
+    background-size: cover;
+    display: flex;
+    position: absolute;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    left: 0;
+  }
+}
+.sayan2 {
+  background-position: contain;
+  background-size: cover;
+  display: flex;
+  position: absolute;
+  top: 20px;
+  width: 100px;
+  height: 150px;
+  left: 5;
+}
+@media (max-width: 600px) {
+  .sayan2 {
+    background-position: contain;
+    background-size: cover;
+    display: flex;
+    position: absolute;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    left: 0;
+  }
 }

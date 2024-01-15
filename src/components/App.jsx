@@ -7,7 +7,6 @@ function App() {
     <div className="containerG">
       <Header />
       <div className="introduction">
-        <Player />{' '}
         <Link to="/Home">
           <h1 className="introH1">iAim</h1>
         </Link>
@@ -17,7 +16,7 @@ function App() {
       </div>
       <h4 className="introH4">a calming journey to master your reflexes.</h4>{' '}
       <div className="thirteen">
-        <h1>Gravity</h1>
+        <h1>LYCAWN</h1>
       </div>
     </div>
   );
