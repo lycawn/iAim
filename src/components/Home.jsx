@@ -54,11 +54,12 @@ function Home() {
   function moveBox(box) {
     const gameContainer = document.getElementById('gameContainer');
     if (gameContainer) {
-    const containerRect = gameContainer.getBoundingClientRect();
-    const randomX = Math.floor(Math.random() * (containerRect.width - 50));
-    const randomY = Math.floor(Math.random() * (containerRect.height - 50));
-    box.style.left = `${randomX}px`;
-    box.style.top = `${randomY}px`;
+      const containerRect = gameContainer.getBoundingClientRect();
+      const randomX = Math.floor(Math.random() * (containerRect.width - 50));
+      const randomY = Math.floor(Math.random() * (containerRect.height - 50));
+      box.style.left = `${randomX}px`;
+      box.style.top = `${randomY}px`;
+    }
   }
   function reloadWindow() {
     window.location.reload(false);
