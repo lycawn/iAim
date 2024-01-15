@@ -231,7 +231,7 @@ function Home() {
                 </div>
                 <div id="tag">Tag Element</div>
                 <button className="powerUp" onClick={() => goTime(20)}>
-                  Increase Time
+                  Increase Time Duration
                 </button>
               </div>
             )}
