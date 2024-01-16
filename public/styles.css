@@ -276,18 +276,13 @@ body {
 .game-box {
   width: 100px;
   height: 100px;
-  margin: 10px;
-  display: flex;
+
   background-image: url('./img/target.png'); /* Replace with the actual image path */
   animation: float 6s ease-in-out infinite;
   background-size: cover;
-  background-position: center;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 100px;
+
   position: absolute;
-  border: none; /* Remove the border */
+  display: block;
   z-index: 0;
 }
 .game-box2 {
@@ -308,7 +303,11 @@ body {
   border: none; /* Remove the border */
   z-index: 1;
 }
-.game-box:hover {
+@media (max-width: 600px) {
+  .game-box {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .scoreBoard {
