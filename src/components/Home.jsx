@@ -21,7 +21,9 @@ function Home() {
   const handle = useFullScreenHandle();
   const [audio, SetAudio] = useState('');
   const powerUpSound = new Audio(powerUps);
-
+  const [gameOver, setGameOver] = useState(false);
+  //GET ELEMENT
+  const getScoreElement = document.getElementById('overwhelms');
   // START GAME FUNCTION .. SETS  scores and time Interval & when time passes END BOOLEAN TO end game
   function startGame() {
     const gameInterval = setInterval(() => {
@@ -29,6 +31,7 @@ function Home() {
         if (prevTime === 0 || countDiv === 30) {
           clearInterval(gameInterval);
           setAlive(false);
+          setGameOver(false);
           setScore(0);
           setRemainingTime(20 * 3);
         }
@@ -39,7 +42,7 @@ function Home() {
 
   function endGame() {
     document.getElementById('gameContainer').classList.remove('gameContainer');
-
+    setGameOver(true);
     setTimeUse(null);
     setTimeHealth(null);
   }
@@ -74,6 +77,10 @@ function Home() {
     setRemainingTime(prevTime => prevTime + x);
     setTimeUse(prevTime => prevTime - 1);
     setTimeHealth(prevHealth => prevHealth - 1);
+    getScoreElement.classList.add('greenTime');
+    setTimeout(() => {
+      getScoreElement.classList.remove('greenTime');
+    }, 1800);
   }
   function spawnBox() {
     const newBox = document.createElement('div');
@@ -87,7 +94,9 @@ function Home() {
 
         if (newCount >= 30) {
           setAlive(false);
+          setGameOver(true);
           console.log(alive);
+          console.log(gameOver + 'Game eneded');
         }
 
         return newCount;
@@ -104,6 +113,7 @@ function Home() {
 
           if (newCount >= 30) {
             setAlive(false);
+            setGameOver(true);
             console.log(alive);
           }
 
@@ -116,6 +126,12 @@ function Home() {
         setScore(prevScore => {
           if ((prevScore + 1) % 10 === 0) {
             clickAudio.play();
+            setRemainingTime(prevTime => prevTime + 2);
+            getScoreElement.classList.add('greenTime');
+            setTimeout(() => {
+              getScoreElement.classList.remove('greenTime');
+            }, 1800);
+
             // SCORE Gain time
           } else if (prevScore === 20) {
             setTimeUse(prevTime => prevTime + 1);
@@ -129,6 +145,9 @@ function Home() {
           } else if (prevScore === 160) {
             setTimeHealth(prevHealth => prevHealth + 1);
             setTimeUse(prevTime => prevTime + 1);
+          } else if (prevScore === 200) {
+            setTimeHealth(prevHealth => prevHealth + 2);
+            setTimeUse(prevTime => prevTime + 2);
           }
           // HIGHLIGHTS
           if (prevScore == 20) {
@@ -157,6 +176,14 @@ function Home() {
             }, 3000);
           } else if (prevScore == 160) {
             setMessage('AIM GOD');
+            setHighlight(true);
+            powerUpSound.play();
+            setTimeout(() => {
+              setHighlight(false);
+              setMessage(null);
+            }, 3000);
+          } else if (prevScore == 200) {
+            setMessage('GOODLIKE');
             setHighlight(true);
             powerUpSound.play();
             setTimeout(() => {
@@ -236,7 +263,9 @@ function Home() {
             {score >= 160 && <img className="sayan2" src="./img/sayan2.gif" />}
             <h1 className="scoreBoard">Score: {score}</h1>
             <p className="overwhelm">Enemy Overwhelm : {countDiv}</p>
-            <p className="overwhelm">Remaining Time: {remainingTime} seconds</p>
+            <p id="overwhelms" className="overwhelm">
+              Remaining Time: {remainingTime} seconds
+            </p>
             <button className="fullscreen1" onClick={handle.enter}>
               <img
                 src="./img/fullscreen.png"
@@ -262,7 +291,7 @@ function Home() {
             <button onClick={startClick} id="gameStart">
               START GAME
             </button>
-            {countDiv >= 30 && (
+            {countDiv === 30 && (
               <button onClick={reloadWindow} id="gameOver">
                 GAME OVER
               </button>
