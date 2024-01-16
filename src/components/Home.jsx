@@ -84,8 +84,15 @@ function Home() {
   }
   function spawnBox() {
     const newBox = document.createElement('div');
+
     newBox.className = 'game-box';
+    newBox.id = 'gameBox';
     newBox.textContent = '';
+
+    // newBox.className = 'game-box2';
+    // newBox.id = 'gameBox';
+    // newBox.textContent = '';
+
     setTimeout(() => {
       //COUNTING ENEMIES FOR OVERWHELM
       setCountDiv(prevCountDiv => {
@@ -303,7 +310,7 @@ function Home() {
               </h1>
             )}
             <div id="gameContainer" className="hidden">
-              {/* No fixed boxes here */}
+              {/* content incoming */}
             </div>
             <GunCursor />
           </div>
