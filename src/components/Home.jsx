@@ -97,13 +97,10 @@ function Home() {
       //COUNTING ENEMIES FOR OVERWHELM
       setCountDiv(prevCountDiv => {
         const newCount = prevCountDiv + 1;
-        console.log(newCount);
 
         if (newCount >= 30) {
           setAlive(false);
           setGameOver(true);
-          console.log(alive);
-          console.log(gameOver + 'Game eneded');
         }
 
         return newCount;
@@ -116,7 +113,6 @@ function Home() {
       setTimeout(() => {
         setCountDiv(prevCountDiv => {
           const newCount = prevCountDiv - 1;
-          console.log(newCount);
 
           if (newCount >= 30) {
             setAlive(false);
