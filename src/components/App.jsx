@@ -12,7 +12,7 @@ function App() {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.7, 0.7, 0.7];
+      screenScale = [0.5, 0.5, 0.5];
       screenPosition = [0, -6.5, -43.4];
     } else {
       screenScale = [0.7, 0.7, 0.7];
