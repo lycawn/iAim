@@ -326,26 +326,27 @@ function Home() {
       startGame();
 
       // Start spawning new boxes with intervals
-      firstInterval = setInterval(spawnBox, 500);
+      firstInterval = setInterval(spawnBox, 1000);
 
       if (alive) {
         //CHECKING EVERY STATE FOR ALIVE
         setTimeout(() => {
           clearInterval(firstInterval);
 
-          secondInterval = setInterval(spawnBox, 600);
+          secondInterval = setInterval(spawnBox, 750);
           if (alive) {
             setTimeout(() => {
               clearInterval(secondInterval);
 
-              thirdInterval = setInterval(spawnBox, 750);
+              thirdInterval = setInterval(spawnBox, 650);
               if (alive) {
                 setTimeout(() => {
                   if (alive) {
                     setTimeout(() => {
                       clearInterval(thirdInterval);
 
-                      fourthInterval = setInterval(spawnBox, 850);
+                      fourthInterval = setInterval(spawnBox, 450);
+                      setTimeout(() => {}, 20000);
                     }, 20000);
                   }
                 }, 20000);
