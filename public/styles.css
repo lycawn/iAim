@@ -749,8 +749,8 @@ span {
 }
 @media (max-width: 600px) {
   #ghostKitty {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     left: -10px;
     position: absolute;
   }
