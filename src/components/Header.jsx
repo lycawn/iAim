@@ -24,7 +24,6 @@ function Header() {
         <a href="https://www.buymeacoffee.com/angelosant">
           Buy me <img src="./img/buymecoffee.png" height="30px" width="30px" />
         </a>
-        <Player />
       </nav>
     </div>
   );

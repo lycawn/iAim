@@ -54,14 +54,16 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
   font-family: 'Great Vibes', cursive;
-  font-size: 6vw;
+  font-size: 4vw;
   text-shadow: 0 0 11px black;
   display: flex;
   animation: float 6s ease-in-out infinite;
 }
-
+link {
+  text-underline-offset: none;
+}
 .introH1 {
-  background-image: url('./img/png-image.png');
+  background-image: url('./img/background.jpg');
   color: #614983;
 }
 
@@ -72,15 +74,12 @@ body {
 
 @keyframes float {
   0% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0px);
   }
   50% {
-    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
     transform: translatey(-20px);
   }
   100% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0px);
   }
 }
@@ -121,7 +120,8 @@ body {
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('./img/cs2Italy.png');
+  height: 100vh;
+  background-image: url('./img/background.jpg');
 }
 
 .musicButton {
@@ -129,11 +129,14 @@ body {
   bottom: 10px;
   right: 10px;
   padding: 10px;
+  width: 50px;
+  height: 50px;
   background-color: #234467;
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  z-index: 9999;
 }
 
 .homePage {
@@ -240,9 +243,9 @@ body {
 }
 /* GunCursor.css */
 .gun-cursor {
-  width: 450px;
-  height: 330px;
-  background: url('img/aim.png') no-repeat center center;
+  width: 50px;
+  height: 30px;
+  background: url('img/wand.svg') no-repeat center center;
   background-size: contain;
   position: absolute;
   pointer-events: none;
@@ -252,7 +255,7 @@ body {
   .gun-cursor {
     width: 60px;
     height: 60px;
-    background-image: url('img/crosshair.png');
+    background-image: url('img/wand.svg');
   }
 }
 .box1 {
@@ -270,11 +273,12 @@ body {
 .game-box {
   width: 100px;
   height: 100px;
-
-  background-image: url('./img/target.png'); /* Replace with the actual image path */
+  border-radius: 100px;
+  box-shadow: none;
+  /* background-image: url('./img/target4.png'); */
   animation: float 6s ease-in-out infinite;
   background-size: cover;
-
+  text-decoration: none;
   position: absolute;
   display: block;
   z-index: 0;
@@ -286,7 +290,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('./img/target.png'); /* Replace with the actual image path */
+  background-image: url('./img/target.png');
   animation: float 1s ease-in-out infinite;
   background-size: cover;
   background-position: center;
@@ -560,7 +564,7 @@ span {
   font-family: teko;
   font-size: 60px;
   color: #2ecc71; /* Make text transparent */
-
+  bottom: 70px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -570,20 +574,39 @@ span {
 }
 
 .powerUp {
-  background-color: #ec8f5e;
-  box-shadow: 0 0 15px black;
-  border-radius: 18px;
-  opacity: 0.5;
-  position: absolute;
-  padding: 10px;
-  border: none;
-  width: 100px;
-  z-index: 2;
-  left: 40px;
-  margin-top: 10px;
+  margin: 10px auto;
+  width: 250px;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  font-family: 'Skranji', cursive;
+  color: #ffc000;
+  z-index: 99999;
+  font-size: 18px;
+  font-weight: 400;
+  text-shadow: 0 1px 3px #000;
+  text-align: center;
+  padding: 10px 0;
+  background: radial-gradient(circle, #8b0000, #8b0000);
+  border-top: 4px ridge #ffb000;
+  border-left: 4px groove #ffb000;
+  border-right: 4px ridge #ffb000;
+  position: relative;
+  border-bottom: 4px groove #ffb000;
+  box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
 }
 .powerUp:hover {
-  opacity: 1;
+  background: radial-gradient(circle, #e52b2b, #8b0000);
+  box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+}
+.powerUp:active {
+  background: radial-gradient(circle, #ec6a6a, #e52b2b);
+  box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+}
+@media (max-width: 600px) {
+  .powerUp {
+    width: 120px;
+    font-size: 10px;
+  }
 }
 
 .fullscreen1 {
@@ -708,13 +731,38 @@ span {
   color: #fff;
 }
 .infoGame {
-  background-color: #47586a;
+  background: rgba(53, 78, 53, 0.7); /*  70% opaque green */
   padding: 10px;
-  font-family: teko;
-  display: flex;
+  border-radius: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  display: block;
   color: #2ecc71;
 }
 .rotate {
   font-family: bungee spice;
   font-size: 15px;
+}
+#ghostKitty {
+  width: 250px;
+  height: 250px;
+  bottom: 55px;
+}
+@media (max-width: 600px) {
+  #ghostKitty {
+    width: 250px;
+    height: 250px;
+    left: -10px;
+    position: absolute;
+  }
+}
+/* nodes.Roundcube_Atlas_E_0.geometry */
+.completed {
+  width: 1100px;
+  height: 100vh;
+}
+@media (max-width: 600px) {
+  .completed {
+    width: 500px;
+    transform: translate(0, -20%);
+  }
 }

@@ -1,35 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import iAmIntro from './assetsM/cstheme.mp3';
+import React, { useState, useEffect, useRef } from 'react';
+import sakura from './assets/sakura.mp3';
+import { soundoff, soundon } from './assets/icons';
 function Player() {
-  const audio = new Audio(iAmIntro);
-  // const toggle = () => setMusic(!music);
+  const audioRef = useRef(new Audio(sakura));
   const [music, setMusic] = useState(false);
-
-  function musicPlay() {
-    setMusic(!music);
-    if (!music) {
-      audio.play();
-    } else {
-      audio.pause();
-      window.location.reload(false);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  audioRef.current.volume = 0.4;
+  audioRef.current.loop = true;
+  useEffect(() => {
+    if (isPlayingMusic) {
+      audioRef.current.play();
     }
-  }
 
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     if (music == false) {
-  //       audio.pause();
-  //     } else {
-  //       audio.play();
-  //     }
-  //   }, 1000);
-  // }, [music]);
+    return () => {
+      audioRef.current.pause();
+    };
+  }, [isPlayingMusic]);
 
   return (
     <div>
-      <button className="musicButton" onClick={musicPlay}>
-        {music ? 'Pause' : 'Play'}
-      </button>
+      <div className="">
+        <img
+          className="musicButton"
+          src={!isPlayingMusic ? soundoff : soundon}
+          alt="jukebox"
+          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+        />
+      </div>
     </div>
   );
 }

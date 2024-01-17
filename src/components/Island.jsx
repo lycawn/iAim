@@ -27,14 +27,18 @@ export function Island({
   // Get access to the Three.js renderer and viewport
   const { gl, viewport } = useThree();
   const { nodes, materials } = useGLTF(islandScene);
-
+  const autoRotation = useRef(0.001 * Math.PI);
   // Use a ref for the last mouse x position
   const lastX = useRef(0);
   // Use a ref for rotation speed
   const rotationSpeed = useRef(0);
   // Define a damping factor to control rotation damping
   const dampingFactor = 0.95;
-
+  useEffect(() => {
+    if (isRotating) {
+      autoRotation.current = 0.005 * Math.PI; // Reset auto-rotation speed
+    }
+  }, [isRotating]);
   // Handle pointer (mouse or touch) down event
   const handlePointerDown = event => {
     event.stopPropagation();
@@ -84,12 +88,12 @@ export function Island({
       if (!isRotating) setIsRotating(true);
 
       islandRef.current.rotation.y += 0.005 * Math.PI;
-      rotationSpeed.current = 0.007;
+      rotationSpeed.current = 0.107;
     } else if (event.key === 'ArrowRight') {
       if (!isRotating) setIsRotating(true);
 
       islandRef.current.rotation.y -= 0.005 * Math.PI;
-      rotationSpeed.current = -0.057;
+      rotationSpeed.current = -0.157;
     }
   };
 
@@ -121,7 +125,14 @@ export function Island({
 
   // This function is called on each frame update
   useFrame(() => {
-    // If not rotating, apply damping to slow down the rotation (smoothly)
+    // If not rotating and auto-rotation is enabled, apply auto-rotation
+    if (!isRotating && autoRotation.current !== 0) {
+      // Update the island's rotation based on the auto-rotation
+      islandRef.current.rotation.y += autoRotation.current;
+    }
+
+    // ... (previous code)
+
     if (!isRotating) {
       // Apply damping factor
       rotationSpeed.current *= dampingFactor;
@@ -136,7 +147,7 @@ export function Island({
       // When rotating, determine the current stage based on island's orientation
       const rotation = islandRef.current.rotation.y;
 
-      /**
+      /*
        * Normalize the rotation value to ensure it stays within the range [0, 2 * Math.PI].
        * The goal is to ensure that the rotation value remains within a specific range to
        * prevent potential issues with very large or negative rotation values.
@@ -163,10 +174,10 @@ export function Island({
         case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
           setCurrentStage(3);
           break;
-        case normalizedRotation >= 1.4 && normalizedRotation <= 2.6:
+        case normalizedRotation >= 1.7 && normalizedRotation <= 2.6:
           setCurrentStage(2);
           break;
-        case normalizedRotation >= 3.25 && normalizedRotation <= 4.95:
+        case normalizedRotation >= 3.25 && normalizedRotation <= 4.55:
           setCurrentStage(1);
           break;
         default:
