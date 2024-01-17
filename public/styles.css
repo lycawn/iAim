@@ -119,6 +119,7 @@ link {
 .container {
   position: relative;
   background-size: cover;
+  user-select: none;
   background-repeat: no-repeat;
   height: 100vh;
   background-image: url('./img/background.jpg');
@@ -610,14 +611,14 @@ span {
 }
 
 .fullscreen1 {
-  background: none;
-  border: none;
+  background-color: #614983;
+  border-radius: 10px;
   position: fixed;
-
   left: 150px;
 }
 @media (max-width: 600px) {
   .fullscreen1 {
+    font-size: 5px;
     left: 60px;
   }
 }

@@ -110,7 +110,14 @@ function Home() {
   function kittyClick() {
     setKittyClicked(false);
     setLuckScore(0);
-
+    if (kittyClicked) {
+      setMessage('+10 Health');
+      setHighlight(true);
+      setTimeout(() => {
+        setHighlight(false);
+        setMessage(null);
+      }, 3000);
+    }
     setTimeHealth(prevHealth => prevHealth + 10);
     document.getElementById('ghostKitty').classList.add('hidden');
   }
@@ -157,7 +164,6 @@ function Home() {
 
     if (alive) {
       newBox.className = 'game-box';
-      newBox.textContent = '';
 
       // Create an img element
       const img = document.createElement('img');
@@ -246,14 +252,7 @@ function Home() {
             setTimeHealth(prevHealth => prevHealth + 2);
           }
           // HIGHLIGHTS
-          if (kittyClicked) {
-            setMessage('+20 Health');
-            setHighlight(true);
-            setTimeout(() => {
-              setHighlight(false);
-              setMessage(null);
-            }, 3000);
-          }
+
           if (prevScore == 20) {
             setMessage('Nice Aim');
             setHighlight(true);
@@ -303,6 +302,7 @@ function Home() {
       }
     };
 
+    //random Spawning
     const gameContainer = document.getElementById('gameContainer');
     if (gameContainer) {
       const containerRect = gameContainer.getBoundingClientRect();
@@ -378,6 +378,7 @@ function Home() {
         <div className="container">
           {' '}
           <button className="fullscreen1" onClick={handle.enter}>
+            Full Screen<br></br>
             <img
               src="./img/fullscreen.png"
               width="30px"
