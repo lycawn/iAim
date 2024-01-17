@@ -185,7 +185,7 @@ export function Island({
       <mesh
         geometry={nodes.polySurface945_tree1_0.geometry}
         material={materials.PaletteMaterial001}
-      />
+      />{' '}
       <mesh
         geometry={nodes.polySurface946_tree2_0.geometry}
         material={materials.PaletteMaterial001}

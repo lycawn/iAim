@@ -40,7 +40,7 @@ function App() {
             </div>
           </Link>
         ) : (
-          <h1 className="rotate">Rotate the house for More games</h1>
+          <h1 className="rotate">Rotate the house or tap on the stages</h1>
         )}
 
         <Suspense>
