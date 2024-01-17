@@ -44,8 +44,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 10px;
 }
 
 /* INTRO GRIDS */
@@ -54,14 +52,11 @@ body {
   background-size: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 100%;
   text-align: left;
   font-family: 'Great Vibes', cursive;
   font-size: 6vw;
-  margin: 0;
   text-shadow: 0 0 11px black;
-  position: relative;
+  display: flex;
   animation: float 6s ease-in-out infinite;
 }
 
@@ -100,7 +95,6 @@ body {
   .introH2 {
     width: 140px;
     height: 140px;
-    display: block;
   }
 }
 @media (max-width: 600px) {
@@ -694,4 +688,32 @@ span {
 
 .greenTime {
   color: #2ecc71;
+}
+
+/* JUPITER WORLD */
+.JupiterScore {
+  z-index: 999;
+  text-align: center;
+  color: #2ecc71;
+  font-family: 'Orbitron', sans-serif; /* Use a sci-fi font or choose your own */
+  font-size: 2em; /* Adjust the font size as needed */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Text shadow for a futuristic look */
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+/*  */
+.islandCanvas {
+  position: fixed;
+
+  color: #fff;
+}
+.infoGame {
+  background-color: #47586a;
+  padding: 10px;
+  font-family: teko;
+  display: flex;
+  color: #2ecc71;
+}
+.rotate {
+  font-family: bungee spice;
 }

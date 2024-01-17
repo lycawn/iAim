@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import correct from './assetsM/correct.mp3';
 import achievement from './assetsM/achievement.mp3';
 import Header from './Header';
@@ -6,6 +6,7 @@ import clickBox from './assetsM/click.mp3';
 import GunCursor from './GunCursor';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import powerUps from './assetsM/powerUp.mp3';
+
 function Home() {
   const [alive, setAlive] = useState(false);
   const [score, setScore] = useState(0);

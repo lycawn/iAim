@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import './Preloader.css';
 import App from './App';
+
+import { Suspense, useEffect, useRef, useState } from 'react';
+
 function Preloader() {
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);
@@ -17,9 +19,9 @@ function Preloader() {
 
           setTimeout(() => {
             setcompleted(true);
-          }, 1000);
+          }, 2000);
         });
-    }, 1500);
+    }, 2500);
   }, []);
 
   return (
@@ -28,7 +30,7 @@ function Preloader() {
         <>
           {!loading ? (
             <div className="spinner">
-              <span>All is now</span>
+              <span>All is now</span>{' '}
             </div>
           ) : (
             <div className="completed"> </div>
