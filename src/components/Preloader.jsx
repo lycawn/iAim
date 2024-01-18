@@ -30,7 +30,7 @@ function Preloader() {
         <>
           {!loading ? (
             <div className="spinner">
-              <span>All is now</span>{' '}
+              <span>Everything is now</span>{' '}
             </div>
           ) : (
             <div className="completed"> </div>
