@@ -46,6 +46,7 @@ body {
 }
 .containerG {
   user-select: none;
+  overflow: hidden;
 }
 /* SHOW CASE ITEMS */
 
@@ -137,6 +138,7 @@ link {
   position: relative;
   background-size: cover;
   user-select: none;
+  overflow: hidden;
   background-repeat: no-repeat;
   height: 100vh;
   background-image: url('./img/background.jpg');
