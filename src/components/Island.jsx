@@ -87,12 +87,12 @@ export function Island({
     if (event.key === 'ArrowLeft') {
       if (!isRotating) setIsRotating(true);
 
-      islandRef.current.rotation.y += 0.005 * Math.PI;
+      islandRef.current.rotation.y += 0.015 * Math.PI;
       rotationSpeed.current = 0.087;
     } else if (event.key === 'ArrowRight') {
       if (!isRotating) setIsRotating(true);
 
-      islandRef.current.rotation.y -= 0.005 * Math.PI;
+      islandRef.current.rotation.y -= 0.015 * Math.PI;
       rotationSpeed.current = -0.087;
     }
   };

@@ -6,7 +6,6 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 @media only screen and (min-width: 600px) {
@@ -45,16 +44,27 @@ body {
   justify-content: center;
   align-items: center;
 }
+.containerG {
+  user-select: none;
+}
+/* SHOW CASE ITEMS */
 
+.showcase {
+  position: absolute;
+  top: 1%;
+}
 /* INTRO GRIDS */
+
 .introH1,
-.introH2 {
+.introH2,
+.introH3 {
   background-size: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
   font-family: 'Great Vibes', cursive;
   font-size: 4vw;
+  height: 18vh;
   text-shadow: 0 0 11px black;
   display: flex;
   animation: float 6s ease-in-out infinite;
@@ -71,7 +81,10 @@ link {
   background-image: url('./img/jupiter.png');
   color: #421d75;
 }
-
+.introH3 {
+  background-image: url('./img/home.jpg');
+  color: #fff8e3;
+}
 @keyframes float {
   0% {
     transform: translatey(0px);
@@ -89,9 +102,13 @@ link {
 .introH2:hover {
   text-shadow: 0 8px 16px rgba(218, 27, 27, 0.841);
 }
+.introH3:hover {
+  text-shadow: 0 8px 16px rgba(218, 27, 27, 0.841);
+}
 @media (max-width: 600px) {
   .introH1,
-  .introH2 {
+  .introH2,
+  .introH3 {
     width: 140px;
     height: 140px;
   }
@@ -727,16 +744,19 @@ span {
 
 /*  */
 .islandCanvas {
-  position: fixed;
-
+  position: absolute;
+  display: inline-block;
   color: #fff;
+  width: 450px;
+  height: 350px;
+  bottom: 10%;
 }
 .infoGame {
   background: rgba(53, 78, 53, 0.7); /*  70% opaque green */
   padding: 10px;
   border-radius: 30px;
   font-family: 'Courier New', Courier, monospace;
-  display: block;
+  display: inline-block;
   color: #2ecc71;
 }
 .rotate {
