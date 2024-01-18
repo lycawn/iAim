@@ -1,5 +1,5 @@
 import { css, javascript, react, c } from '../icons';
-import { ogscan, oglogo, vodafone, IPA } from '../work/export';
+import { oglogo, vodafone, IPA, nova, wind } from '../work/export';
 
 export const skills = [
   {
@@ -33,7 +33,7 @@ export const experience = [
     imgUrl: oglogo,
   },
   {
-    title: '2nd Level Technician',
+    title: '2nd Level Technical engineer',
     name_company: 'Vodafone',
     date: '2022-present',
     info: 'Customer support, Managing & directing a customers technical issue for the fastest way possible to a solution',
@@ -52,5 +52,19 @@ export const experience = [
     date: '2018-2022',
     info: 'Team management & customer experience',
     imgUrl: IPA,
+  },
+  {
+    title: '1st Level Technical engingeer',
+    name_company: 'Forthnet/Nova',
+    date: '2021-2022',
+    info: 'Frontline IT Support - Technical Enginner for telecommunications',
+    imgUrl: nova,
+  },
+  {
+    title: '1st Level Technical engineer',
+    name_company: 'Wind',
+    date: '2020-2021',
+    info: 'Technical Support',
+    imgUrl: wind,
   },
 ];
