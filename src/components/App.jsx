@@ -6,6 +6,7 @@ import { Canvas } from '@react-three/fiber';
 import Island from './Island';
 import Bird from './Bird';
 import Bounce from 'react-reveal/Bounce';
+import './styles.css';
 function App() {
   const [currentStage, setCurrentStage] = useState(null);
   const [isRotating, setIsRotating] = useState(false);
