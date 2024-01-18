@@ -150,7 +150,7 @@ link {
 .musicButton {
   position: absolute;
   bottom: 10px;
-  right: 10px;
+  right: 70px;
   padding: 10px;
   width: 50px;
   height: 50px;
@@ -161,7 +161,11 @@ link {
   border-radius: 5px;
   z-index: 9999;
 }
-
+@media (max-width: 600px) {
+  .musicButton {
+    right: 15px;
+  }
+}
 .homePage {
   background-image: url('./img/home.jpg');
   height: 100vh;
@@ -640,6 +644,7 @@ a:visited {
 @media (max-width: 600px) {
   .icon {
     width: 1.5rem;
+    left: 30%;
   }
 }
 .icon::before,

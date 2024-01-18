@@ -34,7 +34,7 @@ function Preloader() {
 
           setTimeout(() => {
             setcompleted(true);
-          }, 3000);
+          }, 4000);
         });
     }, 1000);
   }, []);
