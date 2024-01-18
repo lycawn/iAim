@@ -637,7 +637,11 @@ a:visited {
   background-color: gray;
   display: inline-block;
 }
-
+@media (max-width: 600px) {
+  .icon {
+    width: 1.5rem;
+  }
+}
 .icon::before,
 .icon::after {
   content: '';
