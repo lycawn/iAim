@@ -57,7 +57,7 @@ export const experience = [
     name_company: 'Oldgodsmt2, Finalstandmt2',
     date: '2011-2012 & 2023-2024',
     info: 'Solo development of game server and constantly updating systems, developing gameplay , managing promotions, IT support, game tester',
-    imgUrl: ogscan,
+    imgUrl: oglogo,
   },
   {
     title: '2nd Level Technician',

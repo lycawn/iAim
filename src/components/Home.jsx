@@ -188,7 +188,7 @@ function Home() {
 
     // newBox.className = 'game-box2';
     // newBox.id = 'gameBox';
-    newBox.textContent = '';
+    // newBox.textContent = '';
 
     setTimeout(() => {
       //COUNTING ENEMIES FOR OVERWHELM
