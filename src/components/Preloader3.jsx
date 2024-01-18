@@ -8,22 +8,6 @@ function Preloader3() {
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);
   const [completed, setcompleted] = useState(undefined);
-  const [isRotating, setIsRotating] = useState(false);
-  const [currentStage, setCurrentStage] = useState(0);
-  const adjustIslandForScreenSize = () => {
-    let screenScale, screenPosition;
-
-    if (window.innerWidth < 768) {
-      screenScale = [2.5, 2.5, 2.5];
-      screenPosition = [0, -3.5, -43.4];
-    } else {
-      screenScale = [2.7, 2.7, 2.7];
-      screenPosition = [0, -4.5, -43.4];
-    }
-
-    return [screenScale, screenPosition];
-  };
-  const [islandScale, islandPosition] = adjustIslandForScreenSize();
   useEffect(() => {
     setTimeout(() => {
       fetch('https://jsonplaceholder.typicode.com/posts')

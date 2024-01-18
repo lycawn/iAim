@@ -1,31 +1,4 @@
-import {
-  car,
-  contact,
-  css,
-  estate,
-  express,
-  git,
-  github,
-  html,
-  javascript,
-  linkedin,
-  cpp,
-  mongodb,
-  motion,
-  mui,
-  nextjs,
-  nodejs,
-  pricewise,
-  react,
-  redux,
-  sass,
-  snapgram,
-  summiz,
-  tailwindcss,
-  threads,
-  typescript,
-  c,
-} from '../icons';
+import { css, javascript, react, c } from '../icons';
 import { ogscan, oglogo, vodafone, IPA } from '../work/export';
 
 export const skills = [

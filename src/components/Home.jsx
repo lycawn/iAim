@@ -26,7 +26,6 @@ function Home() {
   const [message, setMessage] = useState(null);
   const [highlight, setHighlight] = useState(false);
   const [Health, setTimeHealth] = useState(0);
-  const [timeUse, setTimeUse] = useState(null);
   const [countDiv, setCountDiv] = useState(0);
   const handle = useFullScreenHandle();
   const [audio, SetAudio] = useState('');
@@ -90,7 +89,6 @@ function Home() {
   function endGame() {
     document.getElementById('gameContainer').classList.remove('gameContainer');
     setGameOver(true);
-    setTimeUse(null);
     setTimeHealth(null);
     setRemainingTime(0);
   }
@@ -140,7 +138,6 @@ function Home() {
   //INCREASE TIME
   function goTime() {
     setRemainingTime(prevTime => prevTime + 20);
-    setTimeUse(prevTime => prevTime - 1);
     setTimeHealth(prevHealth => prevHealth - 10);
     // makes css Green time
   }

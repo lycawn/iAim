@@ -1,52 +1,44 @@
 import { Link } from 'react-router-dom';
-import { Suspense, useState, useEffect } from 'react';
+import { Suspense, useState } from 'react';
 import Player from './Player';
 import Header from './Header';
 import { Canvas } from '@react-three/fiber';
 import Island from './Island';
 import Bird from './Bird';
 import Bounce from 'react-reveal/Bounce';
+import videoBG from './assets/cloudsBG.mp4';
+
 function App() {
+  // Set stage for link items
   const [currentStage, setCurrentStage] = useState(null);
+  // rotating boolean
   const [isRotating, setIsRotating] = useState(false);
+  // Mobile - pc adjustments
   const adjustIslandForScreenSize = () => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.8, 0.8, 0.8];
-      screenPosition = [0, -6.5, -43.4];
+      screenScale = [0.6, 0.6, 0.6];
+      screenPosition = [0, -6.5, -33.4];
     } else {
       screenScale = [0.9, 0.9, 0.9];
-      screenPosition = [0, -3.5, -43.4];
+      screenPosition = [0, -3.5, -35.4];
     }
 
     return [screenScale, screenPosition, currentStage];
   };
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
-  const [joke, setJoke] = useState([]);
-
-  useEffect(() => {
-    fetch('https://open-weather13.p.rapidapi.com/city/landon', {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': 'ac92a4996dmshe8026a968b0cce8p19c6dajsn745a18a85abc',
-        'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com',
-      },
-    })
-      .then(response => response.json())
-      .then(data => {
-        setJoke(data);
-        console.log(data);
-      })
-      .catch(error => console.log(error));
-  }, []);
 
   return (
     <div className="containerG">
+      {/* Container Background */}
+      <video src={videoBG} autoPlay loop muted>
+        {' '}
+      </video>
+      <h4 className="introH4">Angelos Antoniades Portfolio</h4>
       <div className="introduction">
         <Header />
-        <Player />
-
+        <Player />{' '}
         <section className="showcase">
           {currentStage == 1 && (
             <Link style={{ textDecoration: 'none' }} to="/Home">
@@ -75,9 +67,6 @@ function App() {
           )}
           {currentStage == null && (
             <h1 className="rotate">
-              <div>
-                <h1>{joke.data}</h1>
-              </div>
               Rotate the house or tap on the stages (use Arrow keys) <br></br>
               <img src="./img/arrows.png" width="70px" height="70px" />
             </h1>
@@ -112,8 +101,7 @@ function App() {
             </Canvas>
           </Suspense>
         </section>
-      </div>
-      <h4 className="introH4">a calming journey to master your reflexes.</h4>{' '}
+      </div>{' '}
       <div className="thirteen"></div>
     </div>
   );
