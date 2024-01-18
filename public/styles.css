@@ -536,8 +536,8 @@ span {
 }
 @media (max-width: 600px) {
   .button {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
   }
 }
 .background {
