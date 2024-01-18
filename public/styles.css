@@ -644,7 +644,7 @@ a:visited {
 @media (max-width: 600px) {
   .icon {
     width: 1.5rem;
-    left: 30%;
+    left: 10%;
   }
 }
 .icon::before,
