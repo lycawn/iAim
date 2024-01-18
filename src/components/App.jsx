@@ -6,7 +6,6 @@ import { Canvas } from '@react-three/fiber';
 import Island from './Island';
 import Bird from './Bird';
 import Bounce from 'react-reveal/Bounce';
-import './styles.css';
 function App() {
   const [currentStage, setCurrentStage] = useState(null);
   const [isRotating, setIsRotating] = useState(false);
@@ -15,10 +14,10 @@ function App() {
 
     if (window.innerWidth < 768) {
       screenScale = [0.8, 0.8, 0.8];
-      screenPosition = [0, -6.5, -43.4];
+      screenPosition = [14, -6.5, -43.4];
     } else {
       screenScale = [0.9, 0.9, 0.9];
-      screenPosition = [0, -6.5, -43.4];
+      screenPosition = [0, -3.5, -43.4];
     }
 
     return [screenScale, screenPosition, currentStage];

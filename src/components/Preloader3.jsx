@@ -14,11 +14,11 @@ function Preloader3() {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.5, 0.5, 0.5];
-      screenPosition = [0, -6.5, -43.4];
+      screenScale = [2.5, 2.5, 2.5];
+      screenPosition = [0, -3.5, -43.4];
     } else {
-      screenScale = [0.7, 0.7, 0.7];
-      screenPosition = [0, -6.5, -43.4];
+      screenScale = [2.7, 2.7, 2.7];
+      screenPosition = [0, -4.5, -43.4];
     }
 
     return [screenScale, screenPosition];
@@ -35,7 +35,7 @@ function Preloader3() {
 
           setTimeout(() => {
             setcompleted(true);
-          }, 3000);
+          }, 14000);
         });
     }, 1000);
   }, []);
@@ -51,22 +51,24 @@ function Preloader3() {
           ) : (
             <div className="completed">
               {' '}
-              <Suspense>
-                <Canvas>
-                  <directionalLight position={[1, 1, 1]} intensity={2} />
-                  <ambientLight intensity={0.5} />
-                  <pointLight position={[10, 15, 10, 10]} intensity={2} />
+              <section className="skyBox">
+                <Suspense>
+                  <Canvas>
+                    <directionalLight position={[4, 1, 1]} intensity={2} />
+                    <ambientLight intensity={1.5} />
+                    <pointLight position={[55, 15, 10, 10]} intensity={7} />
 
-                  <Polyforest
-                    isRotating={isRotating}
-                    setIsRotating={setIsRotating}
-                    setCurrentStage={setCurrentStage}
-                    position={islandPosition}
-                    rotation={[0.1, 4.7077, 0]}
-                    scale={islandScale}
-                  />
-                </Canvas>
-              </Suspense>
+                    <Polyforest
+                      isRotating={isRotating}
+                      setIsRotating={setIsRotating}
+                      setCurrentStage={setCurrentStage}
+                      position={islandPosition}
+                      rotation={[0.1, 4.7077, 0]}
+                      scale={islandScale}
+                    />
+                  </Canvas>
+                </Suspense>
+              </section>
             </div>
           )}
         </>
