@@ -36,6 +36,8 @@ body {
 
 video {
   width: 100%;
+  margin: 0;
+  padding: 0;
   height: 100vh;
   object-fit: cover;
   overflow: hidden;
@@ -592,6 +594,7 @@ a {
   font-family: Roboto Condensed;
   font-size: 1rem;
   text-decoration: none;
+  color: #2ecc71;
 }
 a:visited {
   color: #2ecc71;
