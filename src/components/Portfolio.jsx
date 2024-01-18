@@ -5,7 +5,7 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import Header from './Header';
 import React from 'react';
-
+import "./portfolio.css"
 function Portfolio() {
   return (
     <section>
