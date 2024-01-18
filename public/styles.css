@@ -542,7 +542,7 @@ span {
   .button {
     height: 3rem;
     width: 3rem;
-    right: 8vw;
+    right: 9vw;
   }
 }
 .background {
@@ -559,7 +559,7 @@ span {
 }
 @media (max-width: 600px) {
   .background {
-    right: 7.5vw;
+    right: 7.8vw;
   }
 }
 
