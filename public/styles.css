@@ -534,7 +534,12 @@ span {
   text-align: center;
   cursor: pointer;
 }
-
+@media (max-width: 600px) {
+  .button {
+    height: 2rem;
+    width: 2rem;
+  }
+}
 .background {
   height: 2rem;
   width: 2rem;
