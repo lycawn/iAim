@@ -542,6 +542,7 @@ span {
   .button {
     height: 3rem;
     width: 3rem;
+    right: 8vw;
   }
 }
 .background {
@@ -555,6 +556,11 @@ span {
   z-index: 1000;
 
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+@media (max-width: 600px) {
+  .background {
+    right: 7.5vw;
+  }
 }
 
 .nav {
@@ -644,7 +650,7 @@ a:visited {
 @media (max-width: 600px) {
   .icon {
     width: 1.5rem;
-    left: 0;
+    left: 30%;
   }
 }
 .icon::before,

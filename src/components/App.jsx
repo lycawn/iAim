@@ -37,8 +37,7 @@ function App() {
       </video>
       <h4 className="introH4">Angelos Antoniades Portfolio</h4>
       <div className="introduction">
-        <Header />
-        <Player />{' '}
+        <Player /> <Header />
         <section className="showcase">
           {currentStage == 1 && (
             <Link style={{ textDecoration: 'none' }} to="/Home">
@@ -70,7 +69,7 @@ function App() {
               Rotate the house or tap on the stages (use Arrow keys) <br></br>
               <img src="./img/arrows.png" width="70px" height="70px" />
             </h1>
-          )}
+          )}{' '}
         </section>
         <section className="islandCanvas">
           <Suspense>
