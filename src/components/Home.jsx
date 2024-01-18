@@ -70,12 +70,7 @@ function Home() {
     return [screenScale, screenPosition];
   };
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
-  function luckScoring() {
-    if (kittyClicked === true) {
-      document.getElementById('ghostKitty').classList.remove('hidden');
-    }
-    return luckScore;
-  }
+
   function kittySpawn() {
     setLuckScore(() => {
       const randomValue = Math.floor(Math.random() * 300) + 1;
@@ -107,6 +102,7 @@ function Home() {
     setRemainingTime(60);
     setCountDiv(null);
   }
+  // Kitty dissappears & grants you 10Health (Highlight too)
   function kittyClick() {
     setKittyClicked(false);
     setLuckScore(0);
@@ -121,6 +117,7 @@ function Home() {
     setTimeHealth(prevHealth => prevHealth + 10);
     document.getElementById('ghostKitty').classList.add('hidden');
   }
+  // Main function of game restricting container for spawn
   function moveBox(box) {
     const gameContainer = document.getElementById('gameContainer');
     if (gameContainer) {
@@ -131,6 +128,7 @@ function Home() {
       box.style.top = `${randomY}px`;
     }
   }
+  //window reload function
   function reloadWindow() {
     window.location.reload(false);
   }
@@ -190,7 +188,7 @@ function Home() {
 
     // newBox.className = 'game-box2';
     // newBox.id = 'gameBox';
-    // newBox.textContent = '';
+    newBox.textContent = '';
 
     setTimeout(() => {
       //COUNTING ENEMIES FOR OVERWHELM

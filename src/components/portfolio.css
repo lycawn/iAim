@@ -1,3 +1,97 @@
+/* IMPORTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300&display=swap');
 body {
   overflow: auto;
+  background-color: #f7f4dd;
+  background-size: cover;
+  background-position: contain;
+}
+
+.welcoming {
+  text-align: center;
+  align-items: center;
+  background-color: #3876bf;
+  padding: 3%;
+  color: #f7f4dd;
+}
+h1 {
+  font-family: josefin sans;
+}
+p {
+  font-family: newsreader;
+}
+/* title */
+
+.web-developer {
+  font-size: 3rem;
+}
+.web-developer-under {
+  font-family: Dancing Script;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+.web-developer-span {
+  display: inline-block;
+  font-family: josefin sans;
+  font-family: 0.5rem;
+}
+
+/*vertical element css */
+.vertical-time-line {
+  /* background-color: #ff9130; */
+
+  border-radius: 10px;
+  padding: 5%;
+}
+.element-css {
+  background-color: #3081d0;
+  box-shadow: 0 0 15px black;
+  padding: 5%;
+  border-radius: 15px;
+}
+/* skill container */
+
+.skills-container {
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 16px; /* Adjust the gap between items */
+}
+
+.skill-items {
+  display: flex;
+  gap: 48px; /* Adjust the gap between items */
+}
+.imgSkills:hover {
+  box-shadow: 0 0 5px black;
+  border-radius: 10px;
+}
+/* work images */
+.image-space {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.imgWork {
+  width: 90%;
+  height: 90%;
+  background-position: contain;
+  background-size: cover;
+}
+
+.name-company {
+  font-family: roboto Condensed;
+  font-weight: bolder;
+  color: #ff9843;
+}
+.job-title {
+  font-family: roboto condensed;
+  color: #faef9b;
+  text-shadow: 0 0 15px black;
 }
