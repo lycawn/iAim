@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import Player from './Player';
 import Header from './Header';
 import { Canvas } from '@react-three/fiber';
@@ -23,12 +23,30 @@ function App() {
     return [screenScale, screenPosition, currentStage];
   };
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
+  const [joke, setJoke] = useState([]);
+
+  useEffect(() => {
+    fetch('https://open-weather13.p.rapidapi.com/city/landon', {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': 'ac92a4996dmshe8026a968b0cce8p19c6dajsn745a18a85abc',
+        'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com',
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        setJoke(data);
+        console.log(data);
+      })
+      .catch(error => console.log(error));
+  }, []);
 
   return (
     <div className="containerG">
       <div className="introduction">
         <Header />
         <Player />
+
         <section className="showcase">
           {currentStage == 1 && (
             <Link style={{ textDecoration: 'none' }} to="/Home">
@@ -57,6 +75,9 @@ function App() {
           )}
           {currentStage == null && (
             <h1 className="rotate">
+              <div>
+                <h1>{joke.data}</h1>
+              </div>
               Rotate the house or tap on the stages (use Arrow keys) <br></br>
               <img src="./img/arrows.png" width="70px" height="70px" />
             </h1>

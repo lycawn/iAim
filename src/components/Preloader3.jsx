@@ -35,9 +35,9 @@ function Preloader3() {
 
           setTimeout(() => {
             setcompleted(true);
-          }, 4000);
+          }, 1000);
         });
-    }, 1000);
+    }, 2000);
   }, []);
 
   return (
@@ -52,7 +52,7 @@ function Preloader3() {
             <div className="completed">
               {' '}
               <section className="skyBox">
-                <Suspense>
+                {/* <Suspense>
                   <Canvas>
                     <directionalLight position={[4, 1, 1]} intensity={2} />
                     <ambientLight intensity={1.5} />
@@ -67,7 +67,7 @@ function Preloader3() {
                       scale={islandScale}
                     />
                   </Canvas>
-                </Suspense>
+                </Suspense> */}
               </section>
             </div>
           )}

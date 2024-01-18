@@ -26,7 +26,7 @@ import {
   typescript,
   c,
 } from '../icons';
-import { ogscan, oglogo, vodafone } from '../work/export';
+import { ogscan, oglogo, vodafone, IPA } from '../work/export';
 
 export const skills = [
   {
@@ -72,5 +72,12 @@ export const experience = [
     date: '2010-present',
     info: 'Something i always did for fun if someone needs something simple - using only sony vegas',
     imgUrl: oglogo,
+  },
+  {
+    title: 'Nightclub maître',
+    name_company: 'First class parties , international parties Athens',
+    date: '2018-2022',
+    info: 'Team management & customer experience',
+    imgUrl: IPA,
   },
 ];
