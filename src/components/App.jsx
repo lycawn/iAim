@@ -88,11 +88,18 @@ function App() {
   return (
     <div className="containerG">
       {/* Container Background */}
-      <Bounce left>
-        <video src={DayNight} autoPlay loop muted alt="./img/home.jpg"></video>
-      </Bounce>
+
       {/* sass button */}
       <div className="introduction">
+        <Bounce left>
+          <video
+            src={DayNight}
+            autoPlay
+            loop
+            muted
+            alt="./img/home.jpg"
+          ></video>
+        </Bounce>
         <div class="toggleWrapper">
           <input type="checkbox" checked={night} className="dn" id="dn" />
           <label for="dn" className="toggle" onClick={toggle}>
