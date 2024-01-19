@@ -89,7 +89,7 @@ function App() {
     <div className="containerG">
       {/* Container Background */}
       <Bounce left>
-        <video src={DayNight} autoPlay loop muted></video>
+        <video src={DayNight} autoPlay loop muted alt="./img/home.jpg"></video>
       </Bounce>
       {/* sass button */}
       <div className="introduction">
