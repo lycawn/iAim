@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffec;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.game-area {
+  width: 80vw;
+  max-width: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #fafafa;
+  margin-bottom: 20px;
+}
+.game-area-correct {
+  width: 80vw;
+  max-width: 600px;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #c1f2b0;
+  margin-bottom: 20px;
+}
+
+.scoreboard {
+  width: 80vw;
+  max-width: 600px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #fafafa;
+  text-align: center;
+  font-family: TEKO;
+}
+
+@media (max-width: 768px) {
+  .game-area,
+  .scoreboard {
+    width: 90vw;
+  }
+}
+
+/* Add more responsive styles as needed */
+
+/* Example styling for game elements */
+.game-element {
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .game-element {
+    width: 20px;
+    height: 20px;
+    font-size: 1.5vh;
+    top: 20px;
+  }
+}
+
+/* correct */
+
+.correct {
+  text-align: center;
+}
+#correct {
+  text-align: center;
+}
+.hard {
+  transform: rotate(90deg);
+  top: -30px;
+  position: relative;
+  display: inline-block;
+  font-size: 3vh;
+}
+/* 
+ */
+
+.timer {
+  top: -30px;
+  position: relative;
+  font-family: teko;
+  font-size: 1vh;
+}
+
+/* button */
+.buttonSub {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 14px 24px;
+  border: none;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s,
+    -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+  background: linear-gradient(
+    to right,
+    rgb(230, 30, 77) 0%,
+    rgb(227, 28, 95) 50%,
+    rgb(215, 4, 102) 100%
+  );
+  color: #fff;
+}

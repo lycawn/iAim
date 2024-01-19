@@ -63,7 +63,8 @@ video {
 
 .introH1,
 .introH2,
-.introH3 {
+.introH3,
+.introh5 {
   background-size: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -91,6 +92,9 @@ link {
   background-image: url('./img/home.jpg');
   color: #fff8e3;
 }
+.introH5 {
+  background-image: url('./img/mathsurvival.png');
+}
 @keyframes float {
   0% {
     transform: translatey(0px);
@@ -114,7 +118,8 @@ link {
 @media (max-width: 600px) {
   .introH1,
   .introH2,
-  .introH3 {
+  .introH3,
+  .introH5 {
     width: 140px;
     height: 140px;
   }

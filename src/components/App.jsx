@@ -141,6 +141,17 @@ function App() {
               </div>
             </Link>
           )}
+          {currentStage == 3 && (
+            <Link style={{ textDecoration: 'none' }} to="/Math-survival">
+              <Bounce left>
+                <h1 className="introH5">Math Survival Game</h1>{' '}
+              </Bounce>{' '}
+              <div className="infoGame">
+                <h1>Max brain power</h1>
+                <p>Increase your survival time as you</p>
+              </div>
+            </Link>
+          )}
           {currentStage == null && (
             <h1 className="rotate">
               <img src="./img/arrows.png" width="70px" height="70px" />{' '}
