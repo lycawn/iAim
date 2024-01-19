@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import Player from './Player';
 import Header from './Header';
 import { Canvas } from '@react-three/fiber';
@@ -7,6 +7,7 @@ import Island from './Island';
 import Bird from './Bird';
 import Bounce from 'react-reveal/Bounce';
 import videoBG from './assets/cloudsBG.mp4';
+import nightBG from './assets/night.mp4';
 
 function App() {
   // Set stage for link items
@@ -27,16 +28,73 @@ function App() {
 
     return [screenScale, screenPosition, currentStage];
   };
-  const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
+  const [islandScale, islandPosition] = adjustIslandForScreenSize();
+  // AUTOMATIC DAY AND NIGHT CYCLE SET
+  const d = new window.Date();
+  let currentTime = d.toLocaleTimeString();
+  const [time, setTime] = useState(currentTime);
+  const [night, isnight] = useState(false);
+  const [cycle, setCycle] = useState('');
+  const cycleTime = d.getHours();
+  let [toggleIsNot, setToggleIsNot] = useState(true);
+  setInterval(updateTime, 1000);
+  function updateTime(event) {
+    let newTime = new Date().toLocaleTimeString();
+    setTime(newTime);
+  }
+
+  //  NIGHT DAY TOGGLE
+
+  let DayNight = videoBG;
+  if (!night) {
+    DayNight = videoBG;
+  } else {
+    DayNight = nightBG;
+  }
+
+  function toggle() {
+    if (!night) {
+      isnight(true);
+    } else {
+      isnight(false);
+    }
+  }
+
+  function dayCycle() {
+    if (toggleIsNot) {
+      if (cycleTime > 6 && cycleTime < 17) {
+        isnight(false);
+        setCycle('Day');
+        setToggleIsNot(false);
+      } else if (cycleTime > 16 && cycleTime < 21) {
+        isnight(false);
+        setCycle('Day');
+        setToggleIsNot(false);
+      } else {
+        isnight(true);
+        setCycle('Night');
+        setToggleIsNot(false);
+      }
+    }
+  }
+  setTimeout(() => {
+    let intervalTime = setInterval(dayCycle, 1000);
+    setTimeout(() => {
+      clearInterval(intervalTime);
+    }, 1000);
+  });
   return (
     <div className="containerG">
       {/* Container Background */}
-      <video src={videoBG} autoPlay loop muted>
+      <video src={DayNight} autoPlay loop muted>
         {' '}
       </video>
       <h4 className="introH4">Angelos Antoniades Portfolio</h4>
       <div className="introduction">
+        <button className="dayOrNight" onClick={toggle}>
+          {cycle} {currentTime}
+        </button>{' '}
         <Player /> <Header />
         <section className="showcase">
           {currentStage == 1 && (
@@ -80,7 +138,7 @@ function App() {
               <spotLight
                 position={[0, 50, 10]}
                 angle={0.15}
-                penumbra={1}
+                penumbra={11}
                 intensity={2}
               />
               <hemisphereLight

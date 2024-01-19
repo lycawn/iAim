@@ -1,13 +1,29 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import './Preloader.css';
 import Home from './Home';
-import Polyforest from './Polyforest';
+import Koicat from './Models/Koicat';
 import Portfolio from './Portfolio';
 import { Canvas, useFrame } from '@react-three/fiber';
 function Preloader3() {
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);
+  const [currentStage, setCurrentStage] = useState(0);
   const [completed, setcompleted] = useState(undefined);
+  const [isRotating, setIsRotating] = useState(false);
+  const adjustIslandForScreenSize = () => {
+    let screenScale, screenPosition;
+
+    if (window.innerWidth < 768) {
+      screenScale = [10.5, 10.5, 10.5];
+      screenPosition = [0, -6.5, -43.4];
+    } else {
+      screenScale = [10.7, 10.7, 10.7];
+      screenPosition = [0, -6.5, -43.4];
+    }
+
+    return [screenScale, screenPosition];
+  };
+  const [islandScale, islandPosition] = adjustIslandForScreenSize();
   useEffect(() => {
     setTimeout(() => {
       fetch('https://jsonplaceholder.typicode.com/posts')
@@ -19,7 +35,7 @@ function Preloader3() {
 
           setTimeout(() => {
             setcompleted(true);
-          }, 1000);
+          }, 4000);
         });
     }, 2000);
   }, []);
@@ -36,22 +52,22 @@ function Preloader3() {
             <div className="completed">
               {' '}
               <section className="skyBox">
-                {/* <Suspense>
+                <Suspense>
                   <Canvas>
                     <directionalLight position={[4, 1, 1]} intensity={2} />
                     <ambientLight intensity={1.5} />
                     <pointLight position={[55, 15, 10, 10]} intensity={7} />
 
-                    <Polyforest
+                    <Koicat
                       isRotating={isRotating}
                       setIsRotating={setIsRotating}
                       setCurrentStage={setCurrentStage}
-                      position={islandPosition}
                       rotation={[0.1, 4.7077, 0]}
                       scale={islandScale}
+                      position={islandPosition}
                     />
                   </Canvas>
-                </Suspense> */}
+                </Suspense>
               </section>
             </div>
           )}

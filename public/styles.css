@@ -986,3 +986,9 @@ a:visited {
   .weather {
   }
 }
+
+/* Day oR night */
+.dayOrNight {
+  bottom: -30px;
+  z-index: 99999;
+}
