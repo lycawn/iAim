@@ -129,13 +129,14 @@ link {
   font-family: 'Satisfy', cursive;
   padding-bottom: 10px;
   font-size: 1.8vw;
+  font-weight: bolder;
   text-align: center;
-  text-shadow: 0 0 10px black;
+  text-shadow: 0 0 20px black;
   color: #fff;
 }
 @media (max-width: 600px) {
   .introH4 {
-    font-size: 3vw;
+    font-size: 5vw;
     text-align: center;
   }
 }
@@ -945,7 +946,9 @@ a:visited {
 }
 .rotate {
   font-family: bungee spice;
+  padding-top: 100px;
   font-size: 15px;
+  margin: 3%;
 }
 #ghostKitty {
   width: 1250px;

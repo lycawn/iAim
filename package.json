@@ -27,6 +27,7 @@
     "react-spring": "^9.7.3",
     "react-three-fiber": "^6.0.13",
     "react-vertical-timeline-component": "^3.6.0",
+    "sass": "^1.70.0",
     "three": "^0.160.0",
     "three-bmfont-text": "^3.0.1",
     "use-asset": "^1.0.4",

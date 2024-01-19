@@ -8,6 +8,7 @@ import Bird from './Bird';
 import Bounce from 'react-reveal/Bounce';
 import videoBG from './assets/cloudsBG.mp4';
 import nightBG from './assets/night.mp4';
+import './button.scss';
 
 function App() {
   // Set stage for link items
@@ -38,7 +39,7 @@ function App() {
   const [cycle, setCycle] = useState('');
   const cycleTime = d.getHours();
   let [toggleIsNot, setToggleIsNot] = useState(true);
-  setInterval(updateTime, 1000);
+  setInterval(updateTime, 500);
   function updateTime(event) {
     let newTime = new Date().toLocaleTimeString();
     setTime(newTime);
@@ -60,7 +61,7 @@ function App() {
       isnight(false);
     }
   }
-
+  //  CYCLE Function
   function dayCycle() {
     if (toggleIsNot) {
       if (cycleTime > 6 && cycleTime < 17) {
@@ -79,10 +80,10 @@ function App() {
     }
   }
   setTimeout(() => {
-    let intervalTime = setInterval(dayCycle, 1000);
+    let intervalTime = setInterval(dayCycle, 500);
     setTimeout(() => {
       clearInterval(intervalTime);
-    }, 1000);
+    }, 500);
   });
   return (
     <div className="containerG">
@@ -90,11 +91,29 @@ function App() {
       <video src={DayNight} autoPlay loop muted>
         {' '}
       </video>
-      <h4 className="introH4">Angelos Antoniades Portfolio</h4>
+      {/* sass button */}
       <div className="introduction">
-        <button className="dayOrNight" onClick={toggle}>
-          {cycle} {currentTime}
-        </button>{' '}
+        <div class="toggleWrapper">
+          <input type="checkbox" checked={night} class="dn" id="dn" />
+          <label
+            for="dn"
+            className="dayOrNight"
+            class="toggle"
+            onClick={toggle}
+          >
+            <span class="toggle__handler">
+              <span class="crater crater--1"></span>
+              <span class="crater crater--2"></span>
+              <span class="crater crater--3"></span>
+            </span>
+            <span class="star star--1"></span>
+            <span class="star star--2"></span>
+            <span class="star star--3"></span>
+            <span class="star star--4"></span>
+            <span class="star star--5"></span>
+            <span class="star star--6"></span>
+          </label>
+        </div>
         <Player /> <Header />
         <section className="showcase">
           {currentStage == 1 && (
@@ -124,8 +143,11 @@ function App() {
           )}
           {currentStage == null && (
             <h1 className="rotate">
-              Rotate the house or tap on the stages (use Arrow keys) <br></br>
-              <img src="./img/arrows.png" width="70px" height="70px" />
+              {' '}
+              <img src="./img/arrows.png" width="70px" height="70px" />{' '}
+              <br></br>
+              Rotate the house or tap on the stages (use Arrow keys) <br></br>{' '}
+              <h4 className="introH4">Angelos Antoniades Portfolio </h4>
             </h1>
           )}{' '}
         </section>
