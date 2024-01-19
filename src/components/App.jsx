@@ -120,7 +120,7 @@ function App() {
         <section className="showcase">
           {currentStage == 1 && (
             <Link style={{ textDecoration: 'none' }} to="/Home">
-              <Bounce left>
+              <Bounce down>
                 <h1 className="introH1">Wonderland iAim</h1>
               </Bounce>
               <div className="infoGame">
@@ -132,7 +132,7 @@ function App() {
           )}
           {currentStage == 2 && (
             <Link style={{ textDecoration: 'none' }} to="/Portfolio">
-              <Bounce left>
+              <Bounce down>
                 <h1 className="introH3">Portfolio</h1>{' '}
               </Bounce>{' '}
               <div className="infoGame">
@@ -143,7 +143,7 @@ function App() {
           )}
           {currentStage == 3 && (
             <Link style={{ textDecoration: 'none' }} to="/Math-survival">
-              <Bounce left>
+              <Bounce down>
                 <h1 className="introH5">Math Survival Game</h1>{' '}
               </Bounce>{' '}
               <div className="infoGame">
