@@ -3,7 +3,7 @@ import { Suspense, useState, useEffect } from 'react';
 import Player from './Player';
 import Header from './Header';
 import { Canvas } from '@react-three/fiber';
-import Island from './Island';
+import Island from './Models/Island';
 import Bird from './Bird';
 import Bounce from 'react-reveal/Bounce';
 import videoBG from './assets/cloudsBG.mp4';

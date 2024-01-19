@@ -10,7 +10,7 @@ import GunCursor from './GunCursor';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import powerUps from './assetsM/powerUp.mp3';
 import { Canvas, useFrame } from '@react-three/fiber';
-import Island from './Island';
+import Island from './Models/Island';
 import Player from './Player';
 import Bounce from 'react-reveal/Bounce';
 import GhostKitty from './GhosKitty';
