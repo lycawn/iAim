@@ -88,19 +88,14 @@ function App() {
   return (
     <div className="containerG">
       {/* Container Background */}
-      <video src={DayNight} autoPlay loop muted>
-        {' '}
-      </video>
+      <Bounce left>
+        <video src={DayNight} autoPlay loop muted></video>
+      </Bounce>
       {/* sass button */}
       <div className="introduction">
         <div class="toggleWrapper">
-          <input type="checkbox" checked={night} class="dn" id="dn" />
-          <label
-            for="dn"
-            className="dayOrNight"
-            class="toggle"
-            onClick={toggle}
-          >
+          <input type="checkbox" checked={night} className="dn" id="dn" />
+          <label for="dn" className="toggle" onClick={toggle}>
             <span class="toggle__handler">
               <span class="crater crater--1"></span>
               <span class="crater crater--2"></span>
@@ -118,10 +113,9 @@ function App() {
         <section className="showcase">
           {currentStage == 1 && (
             <Link style={{ textDecoration: 'none' }} to="/Home">
-              {' '}
               <Bounce left>
-                <h1 className="introH1">Wonderland iAim</h1>{' '}
-              </Bounce>{' '}
+                <h1 className="introH1">Wonderland iAim</h1>
+              </Bounce>
               <div className="infoGame">
                 <h1>Wonderland Aim(BETA) </h1>
                 <p>Do not get overwhelmed by 30 Enemies</p>
@@ -131,7 +125,6 @@ function App() {
           )}
           {currentStage == 2 && (
             <Link style={{ textDecoration: 'none' }} to="/Portfolio">
-              {' '}
               <Bounce left>
                 <h1 className="introH3">Portfolio</h1>{' '}
               </Bounce>{' '}
@@ -143,17 +136,16 @@ function App() {
           )}
           {currentStage == null && (
             <h1 className="rotate">
-              {' '}
               <img src="./img/arrows.png" width="70px" height="70px" />{' '}
               <br></br>
               Rotate the house or tap on the stages (use Arrow keys) <br></br>{' '}
               <h4 className="introH4">Angelos Antoniades Portfolio </h4>
             </h1>
-          )}{' '}
+          )}
         </section>
         <section className="islandCanvas">
           <Suspense>
-            <Canvas className="islandCanvas">
+            <Canvas>
               <directionalLight position={[1, 1, 1]} intensity={2} />
               <ambientLight intensity={0.5} />
               <pointLight position={[10, 5, 10]} intensity={2} />
@@ -180,8 +172,7 @@ function App() {
             </Canvas>
           </Suspense>
         </section>
-      </div>{' '}
-      <div className="thirteen"></div>
+      </div>
     </div>
   );
 }

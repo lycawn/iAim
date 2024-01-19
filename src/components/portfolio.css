@@ -23,6 +23,7 @@ h1 {
 }
 p {
   font-family: newsreader;
+  font-weight: bolder;
 }
 /* title */
 
@@ -90,9 +91,13 @@ p {
   font-family: roboto Condensed;
   font-weight: bolder;
   color: #ff9843;
+  font-size: 5vw;
 }
 .job-title {
   font-family: roboto condensed;
   color: #faef9b;
   text-shadow: 0 0 15px black;
+}
+.job-info {
+  color: #faef9b;
 }

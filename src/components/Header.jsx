@@ -2,23 +2,46 @@ import React, { useState, useEffect } from 'react';
 import Player from './Player';
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [weather, setWeather] = useState([]);
-  const weatherIcon = weather?.weather?.[0]?.icon;
-  const iconurl = 'http://openweathermap.org/img/w/' + weatherIcon + '.png';
+  const [chuckNorris, setChuckNorris] = useState([]);
+  const iconurl = chuckNorris.iconurl;
+  const d = new Date();
+  const currentTime = d.toLocaleTimeString;
+  // const [weather, setWeather] = useState([]);
+  // const weatherIcon = weather?.weather?.[0]?.icon;
+  // const iconurl = 'http://openweathermap.org/img/w/' + weatherIcon + '.png';
   const toggleMenu = () => {
     setMenuOpen(prevMenuOpen => !prevMenuOpen);
   };
+  // useEffect(() => {
+  //   fetch('https://open-weather13.p.rapidapi.com/city/Athens', {
+  //     method: 'GET',
+  //     headers: {
+  //       'X-RapidAPI-Key': 'ac92a4996dmshe8026a968b0cce8p19c6dajsn745a18a85abc',
+  //       'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com',
+  //     },
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setWeather(data);
+  //       console.log(data);
+  //     })
+  //     .catch(error => console.log(error));
+  // }, []);
   useEffect(() => {
-    fetch('https://open-weather13.p.rapidapi.com/city/Athens', {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': 'ac92a4996dmshe8026a968b0cce8p19c6dajsn745a18a85abc',
-        'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com',
-      },
-    })
+    fetch(
+      'https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random',
+      {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key':
+            'ac92a4996dmshe8026a968b0cce8p19c6dajsn745a18a85abc',
+          'X-Rapid-Host': 'matchilling-chuck-norris-jokes-v1.p.rapidapi.com',
+        },
+      }
+    )
       .then(response => response.json())
       .then(data => {
-        setWeather(data);
+        setChuckNorris(data);
         console.log(data);
       })
       .catch(error => console.log(error));
@@ -47,14 +70,21 @@ function Header() {
           </li>
         </ul>
         <div className="weather">
-          <h1>{weather.name}</h1>
+          <h1>Daily chuck Norris joke</h1>
+          {chuckNorris.value?.length > 0 && (
+            <p>
+              {chuckNorris.value} <p>{currentTime}</p>
+              <img src={iconurl} />
+            </p>
+          )}
+          {/* <h1>{weather.name}</h1>
           {weather.weather?.length > 0 && (
             <p>Temperature: {weather?.main.temp}</p>
           )}{' '}
           {weather.weather?.length > 0 && (
             <p>Clouds : {weather.weather[0]?.description}</p>
           )}{' '}
-          <img src={iconurl} />
+           */}{' '}
         </div>
       </nav>
     </div>
