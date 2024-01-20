@@ -27,7 +27,7 @@ import contact from './contact.svg';
 import soundon from './soundon.png';
 import soundoff from './soundoff.png';
 import cpp from './cpp.svg';
-import c from './c.png';
+import c from './c.svg';
 
 export {
   css,
