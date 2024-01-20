@@ -44,6 +44,12 @@ video {
   object-fit: cover;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  video {
+    width: 100vh;
+    height: 100vh;
+  }
+}
 .introduction {
   display: flex;
   flex-direction: column;
