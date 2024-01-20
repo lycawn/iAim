@@ -166,7 +166,6 @@ link {
   background-size: cover;
   user-select: none;
   background-repeat: no-repeat;
-  overflow: hidden;
   height: 100vh;
   background-image: url('./img/background.jpg');
 }
