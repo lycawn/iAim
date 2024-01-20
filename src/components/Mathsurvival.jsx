@@ -3,20 +3,36 @@ import './mathsurviva.css';
 import { questions } from './Mathgame/questions';
 import './button.scss';
 import Header from './Header';
+import { c } from './icons';
 function Mathsurvival() {
   const [quest, setQuestions] = useState([]);
-  const [questLevel, setQuestLevel] = useState(0);
+  const [questLevel, setQuestLevel] = useState(Math.floor(Math.random() * 17));
   const [answer, setAnswer] = useState('');
   const [correct, setCorrect] = useState('');
   const getCorrect = document.getElementById('correct');
   const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(100);
+  const [timer, setTimer] = useState(60);
   const [alive, setAlive] = useState(false);
-
+  const [remainingLife, setRemainingLife] = useState([1, 2, 3]);
   const startGame = () => {
     setAlive(true);
+    setScore(0);
+    setTimer(60);
+    setCorrect('');
   };
+  // endGame Function
+  function endGame() {
+    if (remainingLife.length <= 1 || timer <= 0) {
+      setAlive(false);
+      setTimer(0);
+      setRemainingLife([1, 2, 3]);
+      setCorrect('Game Over');
+    } else {
+      console.log('Hehe');
+    }
+  }
 
+  //  BUTTON FUNCTIONS
   const handleButtonClick = () => {
     if (answer == questions[questLevel].answer) {
       setCorrect('Correct');
@@ -28,9 +44,11 @@ function Mathsurvival() {
         }, 800);
       }, 100);
       setScore(prevScore => prevScore + 10);
-      setAlive(true);
     } else {
       setCorrect('Incorrect');
+      endGame();
+      setRemainingLife(prevRemainingLife => prevRemainingLife.slice(0, -1));
+      setQuestLevel(Math.floor(Math.random() * quest.length)); //
       setTimeout(() => {
         getCorrect.style.backgroundColor = '#FF6868';
         setTimeout(() => {
@@ -38,8 +56,7 @@ function Mathsurvival() {
         }, 800);
       }, 100);
     }
-    setAlive(true);
-
+    console.log(remainingLife.length, 'remaining lifes');
     console.log("User's Answer:", answer);
     console.log('Correct Answer:', questions[questLevel].answer);
   };
@@ -58,8 +75,9 @@ function Mathsurvival() {
           clearInterval(timerInterval);
         }, 60000);
       }, 0);
+    } else {
+      endGame();
     }
-    // Start the timer after 0 milliseconds (immediately)
   }, [alive]);
   console.log(quest);
   return (
@@ -103,6 +121,9 @@ function Mathsurvival() {
         <p className="timer">
           <span>Timer : {timer}</span>
         </p>
+        {remainingLife.map(remainingLifes => (
+          <img src="./img/heart.png" width="50px" height="50px" />
+        ))}
       </div>
     </div>
   );

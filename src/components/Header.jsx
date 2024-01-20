@@ -3,7 +3,7 @@ import Player from './Player';
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [chuckNorris, setChuckNorris] = useState([]);
-  const iconurl = chuckNorris.iconurl;
+  const iconurl = chuckNorris.icon_url;
   const d = new Date();
   const currentTime = d.toLocaleTimeString;
   // const [weather, setWeather] = useState([]);
@@ -58,15 +58,11 @@ function Header() {
       <nav class="nav">
         <ul class="list">
           <li class="item">
-            {' '}
             <a href="/">Home</a>
           </li>
           <li class="item">
-            {' '}
-            <a href="https://www.buymeacoffee.com/angelosant">
-              Buy me{' '}
-              <img src="./img/buymecoffee.png" height="60px" width="60px" />
-            </a>{' '}
+            <a href="https://www.buymeacoffee.com/angelosant">Buy me </a>
+            <img src="./img/buymecoffee.png" height="60px" width="60px" />
           </li>
         </ul>
         <div className="weather">

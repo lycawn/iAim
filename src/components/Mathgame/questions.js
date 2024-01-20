@@ -74,4 +74,14 @@ export const questions = [
     question: '(7*22)/[4*(27-21.5)]',
     answer: 7,
   },
+  {
+    id: '16',
+    question: '50+35',
+    answer: 85,
+  },
+  {
+    id: '17',
+    question: '40+31',
+    answer: 71,
+  },
 ];
