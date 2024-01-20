@@ -138,6 +138,7 @@ body {
 }
 .hearts {
   top: -60px;
+  position: relative;
 }
 
 /* 
