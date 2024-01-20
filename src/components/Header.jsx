@@ -9,9 +9,6 @@ function Header() {
   // const [weather, setWeather] = useState([]);
   // const weatherIcon = weather?.weather?.[0]?.icon;
   // const iconurl = 'http://openweathermap.org/img/w/' + weatherIcon + '.png';
-  const toggleMenu = () => {
-    setMenuOpen(prevMenuOpen => !prevMenuOpen);
-  };
   // useEffect(() => {
   //   fetch('https://open-weather13.p.rapidapi.com/city/Athens', {
   //     method: 'GET',
@@ -64,15 +61,25 @@ function Header() {
             <a href="https://www.buymeacoffee.com/angelosant">Buy me </a>
             <img src="./img/buymecoffee.png" height="60px" width="60px" />
           </li>
+          <li className="item">
+            <a href="/Home">Wonderland aim</a>
+          </li>
+          <li className="item">
+            <a href="/Portfolio">Portfolio</a>
+          </li>
+          <li className="item">
+            <a href="/Math-survival">Math-survival</a>
+          </li>
         </ul>
         <div className="weather">
           <h1>Daily chuck Norris joke</h1>
           {chuckNorris.value?.length > 0 && (
             <p>
-              {chuckNorris.value} <p>{currentTime}</p>
+              {chuckNorris.value}
               <img src={iconurl} />
             </p>
           )}
+          <p>{currentTime}</p>
           {/* <h1>{weather.name}</h1>
           {weather.weather?.length > 0 && (
             <p>Temperature: {weather?.main.temp}</p>

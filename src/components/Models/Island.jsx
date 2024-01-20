@@ -36,7 +36,7 @@ export function Island({
   const dampingFactor = 0.95;
   useEffect(() => {
     if (isRotating) {
-      autoRotation.current = 0.005 * Math.PI; // Reset auto-rotation speed
+      autoRotation.current = 0.001 * Math.PI; // Reset auto-rotation speed
     }
   }, [isRotating]);
   // Handle pointer (mouse or touch) down event

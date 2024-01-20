@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import sakura from './assets/sakura.mp3';
+import sakura from './assets/last-samurai.mp3';
 import { soundoff, soundon } from './assets/icons';
 function Player() {
   const audioRef = useRef(new Audio(sakura));

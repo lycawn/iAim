@@ -11,14 +11,22 @@ function Mathsurvival() {
   const [correct, setCorrect] = useState('');
   const getCorrect = document.getElementById('correct');
   const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(60);
+  const [timer, setTimer] = useState(100);
   const [alive, setAlive] = useState(false);
   const [remainingLife, setRemainingLife] = useState([1, 2, 3]);
+  const [streak, setStreak] = useState(0);
+  const removeHidden = document.getElementById('answer-help');
   const startGame = () => {
     setAlive(true);
     setScore(0);
-    setTimer(60);
+    setTimer(100);
     setCorrect('');
+  };
+
+  // PREVENTATION OF DEFAULT FORM BEHAVIOR
+  const handleSubmit = event => {
+    event.preventDefault();
+    handleButtonClick();
   };
   // endGame Function
   function endGame() {
@@ -26,6 +34,7 @@ function Mathsurvival() {
       setAlive(false);
       setTimer(0);
       setRemainingLife([1, 2, 3]);
+      setStreak(0);
       setCorrect('Game Over');
     } else {
       console.log('Hehe');
@@ -35,6 +44,7 @@ function Mathsurvival() {
   //  BUTTON FUNCTIONS
   const handleButtonClick = () => {
     if (answer == questions[questLevel].answer) {
+      setStreak(prevStreak => prevStreak + 1);
       setCorrect('Correct');
       setQuestLevel(Math.floor(Math.random() * quest.length)); //
       setTimeout(() => {
@@ -47,6 +57,7 @@ function Mathsurvival() {
     } else {
       setCorrect('Incorrect');
       endGame();
+      setStreak(0);
       setRemainingLife(prevRemainingLife => prevRemainingLife.slice(0, -1));
       setQuestLevel(Math.floor(Math.random() * quest.length)); //
       setTimeout(() => {
@@ -56,11 +67,19 @@ function Mathsurvival() {
         }, 800);
       }, 100);
     }
+
     console.log(remainingLife.length, 'remaining lifes');
     console.log("User's Answer:", answer);
     console.log('Correct Answer:', questions[questLevel].answer);
   };
 
+  function revealAnswer() {
+    removeHidden.classList.remove('hidden');
+    setStreak(0);
+    setTimeout(() => {
+      removeHidden.classList.add('hidden');
+    }, 2000);
+  }
   useEffect(() => {
     if (alive) {
       const questionTexts = questions.map(question => question.question);
@@ -75,6 +94,15 @@ function Mathsurvival() {
           clearInterval(timerInterval);
         }, 60000);
       }, 0);
+      const handleKeyPress = event => {
+        if (event.key === 'Enter') {
+          handleButtonClick();
+        }
+      };
+
+      return () => {
+        document.removeEventListener('keydown', handleKeyPress);
+      };
     } else {
       endGame();
     }
@@ -84,21 +112,22 @@ function Mathsurvival() {
     <div id="correct" class="game-container">
       {' '}
       <Header />
-      <form>
-        <h1>{quest[questLevel]} = ?</h1>
-        <input
-          type="text"
-          id="userInput"
-          placeholder="Enter your answer..."
-          value={answer}
-          className="wrapper"
-          onChange={e => setAnswer(e.target.value)}
-        />
-      </form>
       {alive ? (
-        <button className="buttonSub" type="button" onClick={handleButtonClick}>
-          <p>Submit answer</p>
-        </button>
+        <form onSubmit={handleSubmit}>
+          <h1 className="question">{quest[questLevel]} = ? </h1>
+
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Enter your answer..."
+            value={answer}
+            className="wrapper"
+            onChange={e => setAnswer(e.target.value)}
+          />
+          <button className="buttonSub" type="submit">
+            <p>Submit answer</p>
+          </button>
+        </form>
       ) : (
         <button className="buttonSub" type="button" onClick={startGame}>
           Start Game
@@ -112,17 +141,36 @@ function Mathsurvival() {
         </div>
       </div>
       <div class="scoreboard">
+        {streak >= 3 && (
+          <button className="start-btn" onClick={revealAnswer}>
+            Equation Help{' '}
+          </button>
+        )}
+
+        <h3 id="answer-help" className="hidden">
+          {questions[questLevel].answer}{' '}
+        </h3>
+
         <h2>
           Score:{' '}
           <span className="correct" id="score">
             {score}
           </span>
         </h2>
+
         <p className="timer">
-          <span>Timer : {timer}</span>
+          <span>
+            Timer : {timer}
+            {streak >= 1 && <h4>Streak:{streak}</h4>}
+          </span>
         </p>
         {remainingLife.map(remainingLifes => (
-          <img src="./img/heart.png" width="50px" height="50px" />
+          <img
+            className="hearts"
+            src="./img/heart.png"
+            width="50px"
+            height="50px"
+          />
         ))}
       </div>
     </div>
