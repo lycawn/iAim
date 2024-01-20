@@ -53,7 +53,7 @@ body {
 @media (max-width: 768px) {
   .game-area,
   .scoreboard {
-    width: 30vw;
+    width: 50vw;
     height: 50vw;
   }
 }
