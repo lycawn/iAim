@@ -59,7 +59,7 @@ function Header() {
           </li>
           <li class="item">
             <a href="https://www.buymeacoffee.com/angelosant">Buy me </a>
-            <img src="./img/buymecoffee.png" height="60px" width="60px" />
+            <img src="./img/coffee.png" height="60px" width="60px" />
           </li>
           <li className="item">
             <a href="/Home">Wonderland aim</a>
