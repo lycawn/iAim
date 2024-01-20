@@ -25,17 +25,15 @@ body {
 }
 
 .completed {
+  color: #435560;
+  padding-top: 300px;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 300px;
-  text-align: center;
+  font-family: roboto;
   display: block;
   justify-content: center;
+  text-align: center;
   align-items: center;
-  font-family: roboto;
-  font-size: 3rem;
-  color: #38ff74;
-  overflow: hidden;
 }
 .completion {
   text-align: center;
