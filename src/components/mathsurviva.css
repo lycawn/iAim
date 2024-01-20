@@ -16,7 +16,8 @@ body {
 }
 
 .game-area {
-  width: 80vw;
+  width: 60vw;
+  height: 60vw;
   max-width: 600px;
   padding: 20px;
   box-sizing: border-box;
