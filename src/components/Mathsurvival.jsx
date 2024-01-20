@@ -110,9 +110,13 @@ function Mathsurvival() {
   console.log(quest);
   return (
     <div id="correct" class="game-container">
+      <Header />{' '}
+      <div class="game-element" style={{ top: '40px', left: '35px' }}>
+        <h1>Math Survival</h1>
+        <p className="hard">hard</p>
+      </div>
       <Bounce down>
         {' '}
-        <Header />
         {alive ? (
           <form onSubmit={handleSubmit}>
             <h1 className="question">{quest[questLevel]} = ? </h1>
@@ -136,10 +140,6 @@ function Mathsurvival() {
         )}
         <div className="game-area">
           <h1>{correct}</h1>
-          <div class="game-element" style={{ top: '40px', left: '35px' }}>
-            <h1>Math Survival</h1>
-            <p className="hard">hard</p>
-          </div>
         </div>
         <div class="scoreboard">
           {streak >= 3 && (
