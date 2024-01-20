@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 body {
-  overflow: auto;
+  overflow: hidden;
 }
 .spinner {
   color: #435560;
@@ -39,6 +39,13 @@ body {
 .completion {
   text-align: center;
   color: #435560;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+  font-size: 2rem;
+  animation: fade 1s linear 0s infinite;
+  padding-right: 1rem;
 }
 @media (max-width: 768px) {
   .completion {
