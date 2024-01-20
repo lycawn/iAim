@@ -11,7 +11,7 @@ function Mathsurvival() {
   const [correct, setCorrect] = useState('');
   const getCorrect = document.getElementById('correct');
   const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(100);
+  const [timer, setTimer] = useState(10);
   const [alive, setAlive] = useState(false);
   const [remainingLife, setRemainingLife] = useState([1, 2, 3]);
   const [streak, setStreak] = useState(0);
@@ -19,7 +19,7 @@ function Mathsurvival() {
   const startGame = () => {
     setAlive(true);
     setScore(0);
-    setTimer(100);
+    setTimer(10);
     setCorrect('');
   };
 
@@ -46,6 +46,7 @@ function Mathsurvival() {
     if (answer == questions[questLevel].answer) {
       setStreak(prevStreak => prevStreak + 1);
       setCorrect('Correct');
+      setAnswer('');
       setQuestLevel(Math.floor(Math.random() * quest.length)); //
       setTimeout(() => {
         getCorrect.style.backgroundColor = '#c1f2b0';
@@ -58,6 +59,7 @@ function Mathsurvival() {
       setCorrect('Incorrect');
       endGame();
       setStreak(0);
+      setAnswer('');
       setRemainingLife(prevRemainingLife => prevRemainingLife.slice(0, -1));
       setQuestLevel(Math.floor(Math.random() * quest.length)); //
       setTimeout(() => {
@@ -149,7 +151,8 @@ function Mathsurvival() {
           )}
 
           <h3 id="answer-help" className="hidden">
-            {questions[questLevel].answer}{' '}
+            {questions[questLevel].answer}
+            <img src="./img/clippy-put.gif" width="50px" height="50px" />
           </h3>
 
           <h2>
