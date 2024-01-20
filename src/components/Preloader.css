@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
+body {
+  overflow: hidden;
+}
 .spinner {
   color: #435560;
   padding-top: 300px;
@@ -36,6 +38,11 @@
 }
 .completion {
   color: #435560;
+}
+@media (max-width: 768px) {
+  .completion {
+    font-size: 1.5;
+  }
 }
 @keyframes bigger {
   from {
