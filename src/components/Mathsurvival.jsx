@@ -11,7 +11,7 @@ function Mathsurvival() {
   const [correct, setCorrect] = useState('');
   const getCorrect = document.getElementById('correct');
   const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(10);
+  const [timer, setTimer] = useState(100);
   const [alive, setAlive] = useState(false);
   const [remainingLife, setRemainingLife] = useState([1, 2, 3]);
   const [streak, setStreak] = useState(0);
@@ -19,7 +19,7 @@ function Mathsurvival() {
   const startGame = () => {
     setAlive(true);
     setScore(0);
-    setTimer(10);
+    setTimer(100);
     setCorrect('');
   };
 
