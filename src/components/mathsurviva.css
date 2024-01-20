@@ -88,7 +88,7 @@ body {
 }
 @media (max-width: 600px) {
   .correct {
-    font-size: 15px;
+    font-size: 2vh;
   }
 }
 .hard {
