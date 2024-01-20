@@ -26,12 +26,7 @@ body {
   background-color: #fafafa;
   margin-bottom: 20px;
 }
-@media (max-width: 600px) {
-  .game-area {
-    width: 30vw;
-    height: 40vw;
-  }
-}
+
 .game-area-correct {
   width: 80vw;
   max-width: 600px;
