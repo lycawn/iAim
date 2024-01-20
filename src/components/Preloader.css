@@ -37,6 +37,7 @@ body {
   color: #38ff74;
 }
 .completion {
+  text-align: center;
   color: #435560;
 }
 @media (max-width: 768px) {
