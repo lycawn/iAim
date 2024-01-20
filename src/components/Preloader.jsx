@@ -19,7 +19,7 @@ function Preloader() {
 
           setTimeout(() => {
             setcompleted(true);
-          }, 2000);
+          }, 4000);
         });
     }, 2500);
   }, []);
@@ -33,7 +33,14 @@ function Preloader() {
               <span>Everything is now</span>{' '}
             </div>
           ) : (
-            <div className="completed"> </div>
+            <div className="completed">
+              <p className="completion">Loading completed</p>
+              <img
+                src="./img/toothless-dragon-toothless.gif"
+                width="260px"
+                height="190px"
+              />
+            </div>
           )}
         </>
       ) : (

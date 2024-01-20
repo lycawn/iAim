@@ -98,11 +98,16 @@ body {
   display: inline-block;
   font-size: 3vh;
 }
+@media (max-width: 600px) {
+  .hard {
+    top: -20px;
+  }
+}
 /* 
  */
 
 .timer {
-  top: -20px;
+  top: -40px;
   position: relative;
   font-family: teko;
   font-size: 1vh;
@@ -137,8 +142,13 @@ body {
   width: 350px;
 }
 .hearts {
-  top: -45px;
+  top: -25px;
   position: relative;
+}
+@media (max-width: 600px) {
+  .hearts {
+    top: -35px;
+  }
 }
 
 /* 

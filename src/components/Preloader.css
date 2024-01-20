@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 .spinner {
   color: #435560;
@@ -34,7 +34,9 @@
   font-size: 3rem;
   color: #38ff74;
 }
-
+.completion {
+  color: #435560;
+}
 @keyframes bigger {
   from {
     transform: scale(0);
