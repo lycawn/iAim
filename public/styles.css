@@ -772,7 +772,7 @@ a:visited {
 }
 #score {
   font-family: teko;
-  font-size: 60px;
+  font-size: 30px;
   color: #2ecc71; /* Make text transparent */
   bottom: 70px;
   background-repeat: no-repeat;
