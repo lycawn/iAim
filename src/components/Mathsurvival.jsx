@@ -3,7 +3,7 @@ import './mathsurviva.css';
 import { questions } from './Mathgame/questions';
 import './button.scss';
 import Header from './Header';
-import { c } from './icons';
+import Bounce from 'react-reveal';
 function Mathsurvival() {
   const [quest, setQuestions] = useState([]);
   const [questLevel, setQuestLevel] = useState(Math.floor(Math.random() * 17));
@@ -110,69 +110,71 @@ function Mathsurvival() {
   console.log(quest);
   return (
     <div id="correct" class="game-container">
-      {' '}
-      <Header />
-      {alive ? (
-        <form onSubmit={handleSubmit}>
-          <h1 className="question">{quest[questLevel]} = ? </h1>
+      <Bounce down>
+        {' '}
+        <Header />
+        {alive ? (
+          <form onSubmit={handleSubmit}>
+            <h1 className="question">{quest[questLevel]} = ? </h1>
 
-          <input
-            type="text"
-            id="userInput"
-            placeholder="Enter your answer..."
-            value={answer}
-            className="wrapper"
-            onChange={e => setAnswer(e.target.value)}
-          />
-          <button className="buttonSub" type="submit">
-            <p>Submit answer</p>
-          </button>
-        </form>
-      ) : (
-        <button className="buttonSub" type="button" onClick={startGame}>
-          Start Game
-        </button>
-      )}
-      <div className="game-area">
-        <h1>{correct}</h1>
-        <div class="game-element" style={{ top: '40px', left: '35px' }}>
-          <h1>Math Survival</h1>
-          <p className="hard">hard</p>
-        </div>
-      </div>
-      <div class="scoreboard">
-        {streak >= 3 && (
-          <button className="start-btn" onClick={revealAnswer}>
-            Equation Help{' '}
+            <input
+              type="text"
+              id="userInput"
+              placeholder="Enter your answer..."
+              value={answer}
+              className="wrapper"
+              onChange={e => setAnswer(e.target.value)}
+            />
+            <button className="buttonSub" type="submit">
+              <p>Submit answer</p>
+            </button>
+          </form>
+        ) : (
+          <button className="buttonSub" type="button" onClick={startGame}>
+            Start Game
           </button>
         )}
+        <div className="game-area">
+          <h1>{correct}</h1>
+          <div class="game-element" style={{ top: '40px', left: '35px' }}>
+            <h1>Math Survival</h1>
+            <p className="hard">hard</p>
+          </div>
+        </div>
+        <div class="scoreboard">
+          {streak >= 3 && (
+            <button className="start-btn" onClick={revealAnswer}>
+              Equation Help{' '}
+            </button>
+          )}
 
-        <h3 id="answer-help" className="hidden">
-          {questions[questLevel].answer}{' '}
-        </h3>
+          <h3 id="answer-help" className="hidden">
+            {questions[questLevel].answer}{' '}
+          </h3>
 
-        <h2>
-          Score:{' '}
-          <span className="correct" id="score">
-            {score}
-          </span>
-        </h2>
+          <h2>
+            Score:{' '}
+            <span className="correct" id="score">
+              {score}
+            </span>
+          </h2>
 
-        <p className="timer">
-          <span>
-            Timer : {timer}
-            {streak >= 1 && <h4>Streak:{streak}</h4>}
-          </span>
-        </p>
-        {remainingLife.map(remainingLifes => (
-          <img
-            className="hearts"
-            src="./img/heart.png"
-            width="50px"
-            height="50px"
-          />
-        ))}
-      </div>
+          <p className="timer">
+            <span>
+              Timer : {timer}
+              {streak >= 1 && <h4>Streak:{streak}</h4>}
+            </span>
+          </p>
+          {remainingLife.map(remainingLifes => (
+            <img
+              className="hearts"
+              src="./img/heart.png"
+              width="50px"
+              height="50px"
+            />
+          ))}
+        </div>
+      </Bounce>
     </div>
   );
 }
