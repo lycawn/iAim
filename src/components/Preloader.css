@@ -35,6 +35,7 @@ body {
   font-family: roboto;
   font-size: 3rem;
   color: #38ff74;
+  overflow: hidden;
 }
 .completion {
   text-align: center;
@@ -46,6 +47,7 @@ body {
   font-size: 2rem;
   animation: fade 1s linear 0s infinite;
   padding-right: 1rem;
+  overflow: hidden;
 }
 @media (max-width: 768px) {
   .completion {
