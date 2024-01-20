@@ -602,12 +602,16 @@ span {
   transform: translate(-50%, -50%);
   list-style: none;
   text-align: center;
-  width: 100%;
+  width: 50%;
 }
 
 .item {
   margin: 1rem;
   font-size: 36px;
+}
+.item:hover {
+  background-color: #421d75;
+  width: 100%;
 }
 a {
   font-family: Roboto Condensed;

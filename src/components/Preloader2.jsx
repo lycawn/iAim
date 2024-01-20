@@ -48,7 +48,7 @@ function Preloader() {
               <span>Welcome to iAim..</span>
             </div>
           ) : (
-            <div className="completed">
+            <div className="spinner">
               {' '}
               <Suspense>
                 <Canvas>

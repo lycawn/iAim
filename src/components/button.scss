@@ -214,6 +214,11 @@ input:checked {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .wrapper {
+    height: 5vh;
+  }
+}
 
 .label1 {
   overflow: hidden;

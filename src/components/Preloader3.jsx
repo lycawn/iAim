@@ -49,7 +49,7 @@ function Preloader3() {
               <span>Loading Angelo's Portfolio</span>
             </div>
           ) : (
-            <div className="completed">
+            <div className="spinner">
               {' '}
               <section className="skyBox">
                 <Suspense>

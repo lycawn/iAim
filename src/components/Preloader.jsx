@@ -33,8 +33,8 @@ function Preloader() {
               <span>Everything is now</span>{' '}
             </div>
           ) : (
-            <div className="completed">
-              <p className="completion">Loading completed</p>
+            <div className="spinner">
+              <span>Loading completed</span>
               <img
                 src="./img/toothless-dragon-toothless.gif"
                 width="260px"
