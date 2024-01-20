@@ -17,7 +17,6 @@ body {
       'main'
       'side'
       'footer';
-    overflow: hidden;
   }
 }
 
@@ -28,7 +27,6 @@ body {
       'header header header'
       'main main side'
       'footer footer footer';
-    overflow: hidden;
   }
 }
 
