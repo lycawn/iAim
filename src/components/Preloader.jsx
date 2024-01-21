@@ -19,9 +19,9 @@ function Preloader() {
 
           setTimeout(() => {
             setcompleted(true);
-          }, 4000);
+          }, 3000);
         });
-    }, 2500);
+    }, 1500);
   }, []);
 
   return (
