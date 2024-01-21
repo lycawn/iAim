@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Suspense } from 'react';
-import './Preloader.css';
+import './css/Preloader.css';
 import Home from './Home';
 import Koicat from './Models/Koicat';
 import Portfolio from './Portfolio';

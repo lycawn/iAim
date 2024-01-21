@@ -446,7 +446,6 @@ function Home() {
             )}
             <div id="gameContainer" className="hidden">
               {' '}
-              <Player />
             </div>
             <GunCursor />
           </div>

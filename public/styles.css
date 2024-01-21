@@ -613,6 +613,12 @@ span {
   background-color: #421d75;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .item {
+    font-size: 2vh;
+    max-width: 200px;
+  }
+}
 a {
   font-family: Roboto Condensed;
   font-size: 1rem;
@@ -1006,9 +1012,11 @@ a:visited {
   background-color: #2ecc71;
   font-size: 10px;
   padding: 10px;
+  box-shadow: 0 0 15px black;
 }
 @media (max-width: 600px) {
   .weather {
+    box-shadow: 0 0 15px black;
   }
 }
 

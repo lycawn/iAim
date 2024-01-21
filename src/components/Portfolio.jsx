@@ -5,7 +5,7 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import Header from './Header';
 import React from 'react';
-import './portfolio.css';
+import './css/portfolio.css';
 import { experience, skills } from './costants/constant';
 function Portfolio() {
   return (

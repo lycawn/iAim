@@ -8,8 +8,7 @@ import Bird from './Bird';
 import Bounce from 'react-reveal/Bounce';
 import videoBG from './assets/cloudsBG.mp4';
 import nightBG from './assets/night.mp4';
-import './button.scss';
-import { isPowerOfTwo } from 'three/src/math/MathUtils';
+import './css/button.scss';
 
 function App() {
   // Set stage for link items

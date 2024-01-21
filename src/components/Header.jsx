@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Player from './Player';
+import { Link } from 'react-router-dom';
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [chuckNorris, setChuckNorris] = useState([]);
   const iconurl = chuckNorris.icon_url;
   const d = new Date();
@@ -55,30 +54,28 @@ function Header() {
       <nav class="nav">
         <ul class="list">
           <li class="item">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li class="item">
-            <a href="https://www.buymeacoffee.com/angelosant">Buy me </a>
+            <Link to="https://www.buymeacoffee.com/angelosant">Buy me </Link>
             <img src="./img/coffee.png" height="60px" width="60px" />
           </li>
           <li className="item">
-            <a href="/Home">Wonderland aim</a>
+            <Link to="/Home">Wonderland aim</Link>
           </li>
           <li className="item">
-            <a href="/Portfolio">Portfolio</a>
+            <Link to="/Portfolio">Portfolio</Link>
           </li>
           <li className="item">
-            <a href="/Math-survival">Math-survival</a>
+            <Link to="/Math-survival">Math-survival</Link>
+          </li>
+          <li className="item">
+            <Link to="/Contact">Get In Contact </Link>
           </li>
         </ul>
         <div className="weather">
           <h1>Daily chuck Norris joke</h1>
-          {chuckNorris.value?.length > 0 && (
-            <p>
-              {chuckNorris.value}
-              <img src={iconurl} />
-            </p>
-          )}
+          {chuckNorris.value?.length > 0 && <p>{chuckNorris.value}</p>}
           <p>{currentTime}</p>
           {/* <h1>{weather.name}</h1>
           {weather.weather?.length > 0 && (

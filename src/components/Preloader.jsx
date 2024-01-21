@@ -1,4 +1,4 @@
-import './Preloader.css';
+import './css/Preloader.css';
 import App from './App';
 
 import { Suspense, useEffect, useRef, useState } from 'react';

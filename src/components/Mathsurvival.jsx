@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import './mathsurviva.css';
+import './css/mathsurviva.css';
 import { questions } from './Mathgame/questions';
-import './button.scss';
+import './css/button.scss';
 import Header from './Header';
 import Bounce from 'react-reveal';
 function Mathsurvival() {
@@ -70,9 +70,9 @@ function Mathsurvival() {
       }, 100);
     }
 
-    console.log(remainingLife.length, 'remaining lifes');
-    console.log("User's Answer:", answer);
-    console.log('Correct Answer:', questions[questLevel].answer);
+    // console.log(remainingLife.length, 'remaining lifes');
+    // console.log("User's Answer:", answer);
+    // console.log('Correct Answer:', questions[questLevel].answer);
   };
 
   function revealAnswer() {
@@ -94,7 +94,7 @@ function Mathsurvival() {
 
         setTimeout(() => {
           clearInterval(timerInterval);
-        }, 60000);
+        }, 990000);
       }, 0);
       const handleKeyPress = event => {
         if (event.key === 'Enter') {
@@ -109,7 +109,7 @@ function Mathsurvival() {
       endGame();
     }
   }, [alive]);
-  console.log(quest);
+
   return (
     <div id="correct" class="game-container">
       <Header />{' '}
