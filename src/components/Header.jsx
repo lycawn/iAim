@@ -61,7 +61,7 @@ function Header() {
             <img src="./img/coffee.png" height="60px" width="60px" />
           </li>
           <li className="item">
-            <Link to="/Home">Wonderland aim</Link>
+            <Link to="/Wonderland-aim">Wonderland aim</Link>
           </li>
           <li className="item">
             <Link to="/Portfolio">Portfolio</Link>
