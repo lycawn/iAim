@@ -13,7 +13,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import Island from './Models/Island';
 import Player from './Player';
 import Bounce from 'react-reveal/Bounce';
-import GhostKitty from './GhosKitty';
+import GhostKitty from './Models/GhosKitty';
 function Home() {
   const [alive, setAlive] = useState(false);
   const [score, setScore] = useState(0);

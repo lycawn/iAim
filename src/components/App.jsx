@@ -4,7 +4,7 @@ import Player from './Player';
 import Header from './Header';
 import { Canvas } from '@react-three/fiber';
 import Island from './Models/Island';
-import Bird from './Bird';
+import Bird from './Models/Bird';
 import Bounce from 'react-reveal/Bounce';
 import videoBG from './assets/cloudsBG.mp4';
 import nightBG from './assets/night.mp4';

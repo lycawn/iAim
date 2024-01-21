@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import './css/Preloader.css';
 import Home from './Home';
-import GhostKitty from './GhosKitty';
+import GhostKitty from './Models/GhosKitty';
 import { Canvas, useFrame } from '@react-three/fiber';
 function Preloader() {
   const [data, setData] = useState([]);

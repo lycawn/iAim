@@ -14,7 +14,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Preloader />} />
-        <Route path="/Home" element={<Preloader2 />} />
+        <Route path="/Wonderland-aim" element={<Preloader2 />} />
         <Route path="/Portfolio" element={<Preloader3 />} />
         <Route path="/Math-survival" element={<Mathsurvival />} />
         <Route path="/Contact" element={<Contact />} />
