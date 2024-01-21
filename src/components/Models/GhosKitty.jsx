@@ -14,7 +14,7 @@ import { useEffect, useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 
-import islandScene from './assets/ghost_kitty.glb';
+import islandScene from '../assets/ghost_kitty.glb';
 
 export function GhostKitty({
   isRotating,
