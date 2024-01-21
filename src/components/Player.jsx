@@ -6,7 +6,7 @@ function Player() {
   const [music, setMusic] = useState(false);
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
   audioRef.current.volume = 0.4;
-  audioRef.current.loop = true;
+  audioRef.current.loop = false;
   useEffect(() => {
     if (isPlayingMusic) {
       audioRef.current.play();
