@@ -2,10 +2,12 @@
   display: grid;
   background-image: url('../assets/bg.png');
   height: 100vh;
+  overflow: hidden;
 }
 
 .contact-form {
   place-self: center;
+  overflow: hidden;
   width: 300px; /* Adjust as needed */
 }
 

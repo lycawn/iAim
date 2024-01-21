@@ -85,6 +85,7 @@ video {
 }
 link {
   text-underline-offset: none;
+  z-index: 2;
 }
 .introH1 {
   background-image: url('./img/background.jpg');
@@ -1024,4 +1025,34 @@ a:visited {
 .dayOrNight {
   bottom: -30px;
   z-index: 99999;
+}
+
+.hobbies {
+  margin-top: 5%;
+  width: 100px;
+  height: 40vh;
+  border-radius: 10px;
+  background-color: #2ecc71;
+  font-size: 10px;
+  padding: 10px;
+  box-shadow: 0 0 15px black;
+  z-index: 2;
+}
+.hobbiesShow {
+  width: 400px;
+  z-index: -1;
+  height: 60vh;
+  margin-left: 10px; /* Adjust the margin as needed */
+  position: absolute;
+  top: 280px; /* Adjust the distance from the top */
+  animation: fadeIn 1s; /* You can define your animation here */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

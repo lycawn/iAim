@@ -1,28 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Link } from 'react-router-dom';
+import { Canvas } from 'react-three-fiber';
+import Boxer from './Models/Boxer';
+import Guitarist from './Models/Guitarist';
+import { hobbies } from './hobbies/hobbyExport';
+import Book from './Models/Book';
 function Header() {
   const [chuckNorris, setChuckNorris] = useState([]);
+  const [learnAbout, setLearnAbout] = useState(0);
+  const [hobby, setHobby] = useState([]);
   const iconurl = chuckNorris.icon_url;
   const d = new Date();
   const currentTime = d.toLocaleTimeString;
-  // const [weather, setWeather] = useState([]);
-  // const weatherIcon = weather?.weather?.[0]?.icon;
-  // const iconurl = 'http://openweathermap.org/img/w/' + weatherIcon + '.png';
-  // useEffect(() => {
-  //   fetch('https://open-weather13.p.rapidapi.com/city/Athens', {
-  //     method: 'GET',
-  //     headers: {
-  //       'X-RapidAPI-Key': 'ac92a4996dmshe8026a968b0cce8p19c6dajsn745a18a85abc',
-  //       'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com',
-  //     },
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setWeather(data);
-  //       console.log(data);
-  //     })
-  //     .catch(error => console.log(error));
-  // }, []);
+  const adjustIslandForScreenSize = () => {
+    let screenScale, screenPosition;
+
+    if (window.innerWidth < 768) {
+      screenScale = [10.6, 10.6, 10.6];
+      screenPosition = [0, -6.5, -33.4];
+    } else {
+      screenScale = [110.9, 110.9, 110.9];
+      screenPosition = [0, -3.5, -35.4];
+    }
+
+    return [screenScale, screenPosition];
+  };
+
+  // Learn about me function
+  function learnAboutMe() {
+    // Reset learnAbout when it reaches the maximum value
+    setLearnAbout(prevLearnAbout =>
+      prevLearnAbout === hobbies.length - 1 ? 0 : prevLearnAbout + 1
+    );
+  }
+
+  const currentHobby = hobbies[learnAbout];
+
   useEffect(() => {
     fetch(
       'https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random',
@@ -77,14 +90,79 @@ function Header() {
           <h1>Daily chuck Norris joke</h1>
           {chuckNorris.value?.length > 0 && <p>{chuckNorris.value}</p>}
           <p>{currentTime}</p>
-          {/* <h1>{weather.name}</h1>
-          {weather.weather?.length > 0 && (
-            <p>Temperature: {weather?.main.temp}</p>
-          )}{' '}
-          {weather.weather?.length > 0 && (
-            <p>Clouds : {weather.weather[0]?.description}</p>
-          )}{' '}
-           */}{' '}
+        </div>
+        <div className="hobbies">
+          <div>
+            <h1>{currentHobby ? currentHobby.hobby : ''} </h1>
+          </div>
+          <button className="start-btn2" onClick={learnAboutMe}>
+            Learn about me
+          </button>
+          <section className="hobbiesShow">
+            {learnAbout == 0 && (
+              <Suspense>
+                <Canvas>
+                  <directionalLight position={[1, 1, 1]} intensity={2} />
+                  <ambientLight intensity={0.5} />
+                  <pointLight position={[10, 5, 10]} intensity={2} />
+                  <spotLight
+                    position={[0, 50, 10]}
+                    angle={0.15}
+                    penumbra={11}
+                    intensity={2}
+                  />
+                  <hemisphereLight
+                    skyColor="#b1e1ff"
+                    groundColor="#000000"
+                    intensity={1}
+                  />
+                  <Boxer />
+                </Canvas>
+              </Suspense>
+            )}
+            {learnAbout == 1 && (
+              <Suspense>
+                <Canvas>
+                  <directionalLight position={[1, 1, 1]} intensity={2} />
+                  <ambientLight intensity={0.5} />
+                  <pointLight position={[10, 5, 10]} intensity={2} />
+                  <spotLight
+                    position={[0, 50, 10]}
+                    angle={0.15}
+                    penumbra={11}
+                    intensity={2}
+                  />
+                  <hemisphereLight
+                    skyColor="#b1e1ff"
+                    groundColor="#000000"
+                    intensity={1}
+                  />
+                  <Guitarist />
+                </Canvas>
+              </Suspense>
+            )}
+            {learnAbout == 2 && (
+              <Suspense>
+                <Canvas>
+                  <directionalLight position={[1, 1, 1]} intensity={2} />
+                  <ambientLight intensity={0.5} />
+                  <pointLight position={[10, 5, 10]} intensity={2} />
+                  <spotLight
+                    position={[0, 50, 10]}
+                    angle={0.15}
+                    penumbra={11}
+                    intensity={2}
+                  />
+                  <hemisphereLight
+                    skyColor="#b1e1ff"
+                    groundColor="#000000"
+                    intensity={1}
+                  />
+                  <Book />
+                </Canvas>
+              </Suspense>
+            )}
+          </section>
         </div>
       </nav>
     </div>

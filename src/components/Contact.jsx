@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './css/contact.css';
 import Header from './Header';
 import Bounce from 'react-reveal';
+import { Canvas } from 'react-three-fiber';
+import Boxer from './Models/Boxer';
 
 function Contact() {
   return (

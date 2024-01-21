@@ -189,3 +189,28 @@ body {
     font-size: 20px;
   }
 }
+
+.start-btn2 {
+  text-align: center;
+  display: inline-block;
+  margin: 5px;
+  width: 80px;
+  font-weight: bold;
+  padding: 10px 0 10px 10px;
+  background-color: lightgray;
+  text-shadow: -1px -1px black, 1px 1px white;
+  color: rgb(121, 113, 113);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: 0 0.2em gray;
+  cursor: pointer;
+}
+
+.video-game-button:active,
+.start-btn2:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.2em;
+}
