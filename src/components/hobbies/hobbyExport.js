@@ -15,10 +15,14 @@ export const hobbies = [
   },
   {
     id: 4,
-    hobby: 'Dancing amateur , learning tango',
+    hobby: 'Dancing amateur',
   },
   {
     id: 5,
     hobby: 'Walking in nature',
+  },
+  {
+    id: 6,
+    hobby: 'I like to spent some of my free time gaming.',
   },
 ];
