@@ -67,10 +67,10 @@ export function Island({
     if (isRotating) {
       // If rotation is enabled, calculate the change in clientX position
       const clientX = event.touches ? event.touches[0].clientX : event.clientX;
-      const sensitivity = event.touches ? 0.005 : 0.01;
+
       // calculate the change in the horizontal position of the mouse cursor or touch input,
       // relative to the viewport's width
-      const delta = ((clientX - lastX.current) / viewport.width) * sensitivity;
+      const delta = (clientX - lastX.current) / viewport.width;
 
       // Update the island's rotation based on the mouse/touch movement
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
@@ -124,7 +124,8 @@ export function Island({
     event.preventDefault();
     if (isRotating) {
       const clientX = event.touches[0].clientX;
-      const delta = (clientX - lastX.current) / viewport.width;
+      const sensitivity = event.touches ? 0.005 : 0.01;
+      const delta = ((clientX - lastX.current) / viewport.width) * sensitivity;
 
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
       lastX.current = clientX;
