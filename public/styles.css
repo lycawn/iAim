@@ -968,11 +968,8 @@ a:visited {
 .Room {
   position: absolute;
   display: inline-block;
-  color: #fff;
   width: 250vh;
   height: 200vh;
-  background-size: cover;
-  background-position: contain;
 
   z-index: -1;
 }

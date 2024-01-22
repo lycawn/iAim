@@ -34,7 +34,7 @@ export function Room({
   const dampingFactor = 0.95;
 
   useEffect(() => {
-    camera.position.z = 800;
+    camera.position.z = 650;
   }, [camera]);
   // Handle pointer (mouse or touch) down event
   const handlePointerDown = event => {

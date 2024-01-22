@@ -15,10 +15,10 @@ function Contact() {
 
     if (window.innerWidth < 768) {
       screenScale = [0.6, 0.6, 0.6];
-      screenPosition = [12, -6.5, 493.4];
+      screenPosition = [12, -100.5, 493.4];
     } else {
       screenScale = [1.6, 1.6, 1.6];
-      screenPosition = [0, -3.5, -35.4];
+      screenPosition = [-111, -100.5, -75.4];
     }
 
     return [screenScale, screenPosition, currentStage];
@@ -53,7 +53,7 @@ function Contact() {
                 setIsRotating={setIsRotating}
                 setCurrentStage={setCurrentStage}
                 position={islandPosition}
-                rotation={[0.87, -0.7077, 0]}
+                rotation={[0.77, -1.0, -6.3]}
                 scale={islandScale}
               />
             </Canvas>
