@@ -20,7 +20,7 @@ function Portfolio() {
 
     if (window.innerWidth < 768) {
       screenScale = [0.2, 0.2, 0.2];
-      screenPosition = [-51, -50.5, 493.4];
+      screenPosition = [11, -50.5, 493.4];
     } else {
       screenScale = [1.1, 1.1, 1.1];
       screenPosition = [-51, -200.5, -75.4];

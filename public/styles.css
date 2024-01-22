@@ -992,7 +992,7 @@ a:visited {
 }
 @media (max-width: 768px) {
   .Tokyo {
-    max-width: 100vh;
+    max-width: 100%;
   }
 }
 .infoGame {
