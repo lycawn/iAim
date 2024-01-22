@@ -37,7 +37,7 @@ function Preloader3() {
             setcompleted(true);
           }, 6000);
         });
-    }, 4000);
+    }, 8000);
   }, []);
 
   return (
