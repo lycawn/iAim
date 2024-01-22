@@ -1,4 +1,4 @@
-import React, { useState, Suspense, useEffect, useRef } from 'react';
+import React, { useState, Suspense } from 'react';
 import './css/contact.css';
 import Header from './Header';
 import Bounce from 'react-reveal';

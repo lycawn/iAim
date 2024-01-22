@@ -9,7 +9,6 @@
  * YOU DON'T HAVE TO WRITE EVERYTHING FROM SCRATCH
  */
 
-import { a } from '@react-spring/three';
 import { useEffect, useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
@@ -27,7 +26,6 @@ export function Room({
   // Get access to the Three.js renderer and viewport
   const { gl, viewport, camera } = useThree();
   const { nodes, materials } = useGLTF(islandScene);
-  const autoRotation = useRef(0.001 * Math.PI);
   // Use a ref for the last mouse x position
   const lastX = useRef(0);
   // Use a ref for rotation speed
@@ -56,6 +54,21 @@ export function Room({
     event.stopPropagation();
     event.preventDefault();
     setIsRotating(false);
+  };
+  const handleMouseWheel = event => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const delta = event.deltaY;
+
+    // Adjust the rotation based on the mouse wheel movement
+    islandRef.current.rotation.y += delta * 0.0005;
+
+    // Update the rotation speed
+    rotationSpeed.current = delta * 0.0005;
+
+    // Set rotating to true to keep the rotation going
+    setIsRotating(true);
   };
 
   // Handle pointer (mouse or touch) move event
@@ -142,6 +155,7 @@ export function Room({
     canvas.addEventListener('touchstart', handleTouchStart);
     canvas.addEventListener('touchend', handleTouchEnd);
     canvas.addEventListener('touchmove', handleTouchMove);
+    canvas.addEventListener('wheel', handleMouseWheel);
 
     // Remove event listeners when component unmounts
     return () => {
@@ -153,8 +167,15 @@ export function Room({
       canvas.removeEventListener('pointerdown', handlePointerDown);
       canvas.removeEventListener('pointerup', handlePointerUp);
       canvas.removeEventListener('pointermove', handlePointerMove);
+      canvas.removeEventListener('wheel', handleMouseWheel);
     };
-  }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
+  }, [
+    gl,
+    handlePointerDown,
+    handlePointerUp,
+    handlePointerMove,
+    handleMouseWheel,
+  ]);
 
   // This function is called on each frame update
   useFrame(() => {
