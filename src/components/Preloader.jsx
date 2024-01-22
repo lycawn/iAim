@@ -21,7 +21,7 @@ function Preloader() {
             setcompleted(true);
           }, 3000);
         });
-    }, 1500);
+    }, 8500);
   }, []);
 
   return (
@@ -30,7 +30,7 @@ function Preloader() {
         <>
           {!loading ? (
             <div className="spinner">
-              <span>Everything is now</span>{' '}
+              <span>Life is being created, please wait</span>{' '}
             </div>
           ) : (
             <div className="spinner">
