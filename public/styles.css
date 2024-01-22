@@ -607,7 +607,7 @@ span {
 }
 @media (max-width: 768px) {
   .list {
-    top: 25%;
+    top: 24%;
   }
 }
 .item {
