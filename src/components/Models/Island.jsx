@@ -34,6 +34,7 @@ export function Island({
   const rotationSpeed = useRef(0);
   // Define a damping factor to control rotation damping
   const dampingFactor = 0.95;
+
   useEffect(() => {
     if (isRotating) {
       autoRotation.current = 0.001 * Math.PI; // Reset auto-rotation speed
@@ -66,10 +67,10 @@ export function Island({
     if (isRotating) {
       // If rotation is enabled, calculate the change in clientX position
       const clientX = event.touches ? event.touches[0].clientX : event.clientX;
-
+      const sensitivity = event.touches ? 0.005 : 0.01;
       // calculate the change in the horizontal position of the mouse cursor or touch input,
       // relative to the viewport's width
-      const delta = (clientX - lastX.current) / viewport.width;
+      const delta = ((clientX - lastX.current) / viewport.width) * sensitivity;
 
       // Update the island's rotation based on the mouse/touch movement
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
@@ -95,6 +96,20 @@ export function Island({
       islandRef.current.rotation.y -= 0.015 * Math.PI;
       rotationSpeed.current = -0.087;
     }
+  }; // Handle touchstart event
+  const handleTouchStart = event => {
+    event.stopPropagation();
+    event.preventDefault();
+    setIsRotating(true);
+
+    const clientX = event.touches[0].clientX;
+    lastX.current = clientX;
+  };
+  // Handle touchend event
+  const handleTouchEnd = event => {
+    event.stopPropagation();
+    event.preventDefault();
+    setIsRotating(false);
   };
 
   // Handle keyup events
@@ -103,6 +118,27 @@ export function Island({
       setIsRotating(false);
     }
   };
+  // Handle touchmove event
+  const handleTouchMove = event => {
+    event.stopPropagation();
+    event.preventDefault();
+    if (isRotating) {
+      const clientX = event.touches[0].clientX;
+      const delta = (clientX - lastX.current) / viewport.width;
+
+      islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+      lastX.current = clientX;
+      rotationSpeed.current = delta * 0.01 * Math.PI;
+    }
+  };
+  useEffect(() => {
+    if (isRotating) {
+      autoRotation.current = 0.001 * Math.PI; // Reset auto-rotation speed
+    } else {
+      // Increase auto-rotation speed for better responsiveness on mobile
+      autoRotation.current = 0.005 * Math.PI;
+    }
+  }, [isRotating]);
 
   useEffect(() => {
     // Add event listeners for pointer and keyboard events
@@ -112,6 +148,9 @@ export function Island({
     canvas.addEventListener('pointermove', handlePointerMove);
     window.addEventListener('keydown', handleKeyDown);
     window.addEventListener('keyup', handleKeyUp);
+    canvas.addEventListener('touchstart', handleTouchStart);
+    canvas.addEventListener('touchend', handleTouchEnd);
+    canvas.addEventListener('touchmove', handleTouchMove);
 
     // Remove event listeners when component unmounts
     return () => {
@@ -120,6 +159,9 @@ export function Island({
       canvas.removeEventListener('pointermove', handlePointerMove);
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
+      canvas.removeEventListener('pointerdown', handlePointerDown);
+      canvas.removeEventListener('pointerup', handlePointerUp);
+      canvas.removeEventListener('pointermove', handlePointerMove);
     };
   }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
 

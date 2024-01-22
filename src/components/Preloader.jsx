@@ -35,11 +35,11 @@ function Preloader() {
           ) : (
             <div className="spinner">
               <span>Loading completed</span>
-              <img
+              {/* <img
                 src="./img/toothless-dragon-toothless.gif"
                 width="260px"
                 height="190px"
-              />
+              /> */}
             </div>
           )}
         </>

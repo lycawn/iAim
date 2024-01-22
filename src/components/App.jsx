@@ -5,6 +5,7 @@ import Header from './Header';
 import { Canvas } from '@react-three/fiber';
 import Island from './Models/Island';
 import Bird from './Models/Bird';
+import Dragon from './Models/Dragon';
 import Bounce from 'react-reveal/Bounce';
 import videoBG from './assets/cloudsBG.mp4';
 import nightBG from './assets/night.mp4';
@@ -41,6 +42,12 @@ function App() {
     }
   };
 
+  const dragonClick = () => {
+    setCurrentStage(prevCurrentStage => prevCurrentStage + 1);
+    if (currentStage == 5) {
+      setCurrentStage(0);
+    }
+  };
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
   // AUTOMATIC DAY AND NIGHT CYCLE SET
   const d = new window.Date();
@@ -210,7 +217,9 @@ function App() {
                 intensity={1}
               />
               <Bird />
+
               <Island
+                onClick={dragonClick}
                 isRotating={isRotating}
                 setIsRotating={setIsRotating}
                 setCurrentStage={setCurrentStage}
