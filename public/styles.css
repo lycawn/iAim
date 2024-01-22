@@ -965,6 +965,22 @@ a:visited {
     height: 350px;
   }
 }
+.Room {
+  position: absolute;
+  display: inline-block;
+  color: #fff;
+  width: 250vh;
+  height: 200vh;
+  background-size: cover;
+  background-position: contain;
+
+  z-index: -1;
+}
+@media (max-width: 600px) {
+  .Room {
+    left: 0%;
+  }
+}
 .infoGame {
   background: rgba(53, 78, 53, 0.7); /*  70% opaque green */
   padding: 10px;

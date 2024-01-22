@@ -1,6 +1,7 @@
 .container-form {
   display: grid;
   background-image: url('../assets/bg.png');
+  z-index: -2;
   height: 100vh;
   overflow: hidden;
 }
@@ -41,12 +42,15 @@
   }
 }
 .header-form {
-  color: black;
+  color: rgb(116, 190, 52);
   letter-spacing: 6px;
+  font-weight: bolder;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: black;
   font-family: 'Merriweather', serif;
   -webkit-mask-image: linear-gradient(
     -75deg,
-    rgba(0, 0, 0, 0.6) 30%,
+    rgba(0, 0, 0, 0.6) 50%,
     #000 50%,
     rgba(0, 0, 0, 0.6) 70%
   );
