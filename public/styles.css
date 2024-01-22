@@ -990,8 +990,9 @@ a:visited {
   transform: translate(-50%, -50%);
   z-index: -1;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .Tokyo {
+    max-width: 100vh;
   }
 }
 .infoGame {
