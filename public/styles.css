@@ -598,14 +598,18 @@ span {
 
 .list {
   position: absolute;
-  top: 30%;
+  top: 27%;
   left: 50%;
   transform: translate(-50%, -50%);
   list-style: none;
   text-align: center;
   width: 50%;
 }
-
+@media (max-width: 768px) {
+  .list {
+    top: 25%;
+  }
+}
 .item {
   margin: 1rem;
   font-size: 36px;
