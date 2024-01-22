@@ -38,9 +38,9 @@ function Contact() {
               <pointLight position={[10, 5, 10]} intensity={0} />
               <spotLight
                 position={[0, 0, 0]}
-                angle={0.15}
-                penumbra={10}
-                intensity={3}
+                angle={1.15}
+                penumbra={2}
+                intensity={1}
               />
               <hemisphereLight
                 skyColor="#b1e1ff"

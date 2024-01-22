@@ -10,6 +10,7 @@ function Header() {
   const [learnAbout, setLearnAbout] = useState(0);
   const [hobby, setHobby] = useState([]);
   const iconurl = chuckNorris.icon_url;
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Add state for menu open/close
   const d = new Date();
   const currentTime = d.toLocaleTimeString;
   const adjustIslandForScreenSize = () => {
@@ -54,7 +55,21 @@ function Header() {
         console.log(data);
       })
       .catch(error => console.log(error));
-  }, []);
+    // Event listener for 'M' key press
+    const handleKeyPress = event => {
+      if (event.key === 'm' || event.key === 'M') {
+        setIsMenuOpen(!isMenuOpen);
+      }
+    };
+
+    // Attach the event listener when the component mounts
+    window.addEventListener('keydown', handleKeyPress);
+
+    // Detach the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [isMenuOpen]);
 
   return (
     <div>

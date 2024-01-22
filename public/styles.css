@@ -978,6 +978,22 @@ a:visited {
     left: 0%;
   }
 }
+.Tokyo {
+  position: absolute;
+  overflow: hidden;
+  display: inline-block;
+  width: 450vh;
+  background-image: url('./img/sky.jpg');
+  height: 500vh;
+  top: 130%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+@media (max-width: 600px) {
+  .Tokyo {
+  }
+}
 .infoGame {
   background: rgba(53, 78, 53, 0.7); /*  70% opaque green */
   padding: 10px;
