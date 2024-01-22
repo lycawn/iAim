@@ -14,10 +14,10 @@ function Contact() {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.6, 0.6, 0.6];
-      screenPosition = [12, -100.5, 493.4];
+      screenScale = [0.3, 0.3, 0.3];
+      screenPosition = [-51, -50.5, 493.4];
     } else {
-      screenScale = [1.6, 1.6, 1.6];
+      screenScale = [1.3, 1.3, 1.3];
       screenPosition = [-111, -100.5, -75.4];
     }
 
@@ -35,17 +35,17 @@ function Contact() {
             <Canvas>
               <directionalLight position={[1, 1, 1]} intensity={2} />
               <ambientLight intensity={0.5} />
-              {/* <pointLight position={[10, 5, 10]} intensity={0} />
+              <pointLight position={[10, 5, 10]} intensity={0} />
               <spotLight
                 position={[0, 0, 0]}
                 angle={0.15}
-                penumbra={0}
-                intensity={1}
-              /> */}
+                penumbra={10}
+                intensity={3}
+              />
               <hemisphereLight
                 skyColor="#b1e1ff"
-                groundColor="#99BC85"
-                intensity={1}
+                groundColor="#0A1D56"
+                intensity={0.5}
               />
 
               <Room
@@ -53,7 +53,7 @@ function Contact() {
                 setIsRotating={setIsRotating}
                 setCurrentStage={setCurrentStage}
                 position={islandPosition}
-                rotation={[0.77, -1.0, -6.3]}
+                rotation={[1.09, -1.0, -6.3]}
                 scale={islandScale}
               />
             </Canvas>

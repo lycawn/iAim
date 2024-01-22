@@ -1,9 +1,10 @@
 .container-form {
   display: grid;
-  background-image: url('../assets/Enter1.jpg');
+  background-image: url('../assets/sky.gif');
   z-index: -2;
   height: 100vh;
   overflow: hidden;
+  background-size: cover;
 }
 
 .contact-form {
