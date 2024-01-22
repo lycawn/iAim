@@ -616,7 +616,7 @@ span {
 }
 @media (max-width: 768px) {
   .item {
-    font-size: 2vh;
+    font-size: 3.3vh;
     max-width: 200px;
   }
 }
