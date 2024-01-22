@@ -88,7 +88,7 @@ function Portfolio() {
           {' '}
           <h1 className="rotate">
             <img src="./img/arrows.png" width="70px" height="70px" /> <br></br>
-            Rotate the house or tap on the stages (use Arrow keys) <br></br>{' '}
+            (use Arrow keys) <br></br>{' '}
           </h1>{' '}
           <span className="web-developer-span">Developer</span>
           Web & Game
