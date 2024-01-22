@@ -21,7 +21,7 @@ function Preloader() {
             setcompleted(true);
           }, 3000);
         });
-    }, 8500);
+    }, 5500);
   }, []);
 
   return (

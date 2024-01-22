@@ -19,10 +19,10 @@ function Portfolio() {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.2, 0.2, 0.2];
+      screenScale = [0.18, 0.18, 0.18];
       screenPosition = [11, -50.5, 493.4];
     } else {
-      screenScale = [1.1, 1.1, 1.1];
+      screenScale = [1.08, 1.08, 1.08];
       screenPosition = [-51, -200.5, -75.4];
     }
 
@@ -38,6 +38,10 @@ function Portfolio() {
       } else if (event.key === 'ArrowLeft') {
         // Scroll up logic
         // You can use the ref or any other method to scroll up
+        window.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+      } else if (event.key === 'ArrowDown') {
+        window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+      } else if (event.key === 'ArrowUp') {
         window.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
       }
     };
