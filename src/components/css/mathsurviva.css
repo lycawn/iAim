@@ -213,3 +213,18 @@ body {
   position: relative;
   top: 0.2em;
 }
+
+.classR {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  width: 250vh;
+  height: 200vh;
+
+  z-index: 0;
+}
+@media (max-width: 600px) {
+  .classR {
+    left: 0%;
+  }
+}
