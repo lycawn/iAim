@@ -128,7 +128,7 @@ function Mathsurvival() {
               id="userInput"
               placeholder="Enter your answer..."
               value={answer}
-              className="wrapper"
+              className="wrapper2"
               onChange={e => setAnswer(e.target.value)}
             />
             <button className="buttonSub" type="submit">
