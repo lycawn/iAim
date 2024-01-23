@@ -4,7 +4,7 @@ export const carCard = [
   {
     name: 'Porche Carrera 4s',
     imgCar: carrera,
-    description: 'Carrera stand in spanish for carreer',
+    description: 'Carrera stands for career in Spanish',
     price: '53.000$',
   },
   {

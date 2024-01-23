@@ -5,10 +5,13 @@ import Porche from './Models/Porche';
 import slash from './assetsM/slash.mp3';
 import { carCard } from './costants/car';
 import Header from './Header';
+import Lamborghini from './Models/Lamborghini';
 function Cardealer() {
   const slashSound = new Audio(slash);
   const removeHidden = document.getElementById('carDescHide');
   const [currentStage, setCurrentStage] = useState(null);
+  const [cars, setCars] = useState(['Porche', 'Lamborghini']);
+  const [chooseCar, setChooseCar] = useState('Porche');
   // rotating boolean
   const [isRotating, setIsRotating] = useState(false);
   // Mobile - pc adjustments
@@ -26,6 +29,20 @@ function Cardealer() {
     return [screenScale, screenPosition, currentStage];
   };
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
+  const adjustCarForScreenSize = () => {
+    let screenScale, screenPosition;
+
+    if (window.innerWidth < 768) {
+      screenScale = [80.3, 80.3, 80.3];
+      screenPosition = [-51, -70.5, -175.4];
+    } else {
+      screenScale = [121.5, 121.5, 121.5];
+      screenPosition = [-71, -185.5, -255.4];
+    }
+
+    return [screenScale, screenPosition];
+  };
+  const [carScale, carPosition] = adjustCarForScreenSize();
   useEffect(() => {
     const handleKeyDown = event => {
       if (event.key === 'ArrowDown') {
@@ -52,6 +69,13 @@ function Cardealer() {
   function addHidden() {
     removeHidden.classList.add('hidden');
   }
+  function carChoice() {
+    if (chooseCar === 'Porche') {
+      setChooseCar('Lamborghini');
+    } else {
+      setChooseCar('Porche');
+    }
+  }
   return (
     <div className="dealerBody">
       <div className="Header">
@@ -66,39 +90,80 @@ function Cardealer() {
           </section>
         </a>{' '}
         <section id="Porche" className="porche">
-          <h1 className="akenziH1">Innovation</h1>
+          <h1 className="akenziH1">Innovation</h1>{' '}
           <p className="akenziP">
             Innovative automations with luxurious interiors
           </p>
           <a href="#section2">
             <img className="imgScroll" src="./img/sd.jpg" />
-          </a>
-          <Suspense>
-            <Canvas>
-              <directionalLight position={[3, 5, 5]} intensity={6.5} />
-              <ambientLight intensity={2.5} />
-              <pointLight position={[20, 25, 30]} intensity={2} />
-              <spotLight
-                position={[10, 0, 0]}
-                angle={1.15}
-                penumbra={2}
-                intensity={5}
-              />
-              {/* <hemisphereLight
+          </a>{' '}
+          <div class="dropdown">
+            <div class="dropdown-content">
+              <br></br>
+              <a onClick={carChoice}>{chooseCar}</a>
+              <button className="changeCar" onClick={carChoice}>
+                <p className="view"> change view</p>
+              </button>
+            </div>
+          </div>
+          {chooseCar === cars[0] && (
+            <Suspense>
+              <Canvas>
+                <directionalLight position={[3, 5, 5]} intensity={6.5} />
+                <ambientLight intensity={2.5} />
+                <pointLight position={[20, 25, 30]} intensity={2} />
+                <spotLight
+                  position={[10, 0, 0]}
+                  angle={1.15}
+                  penumbra={2}
+                  intensity={5}
+                />
+                {/* <hemisphereLight
                 skyColor="#b1e1ff"
                 groundColor="#0A1D56"
                 intensity={0.5}
               /> */}
-              <Porche
-                isRotating={isRotating}
-                setIsRotating={setIsRotating}
-                setCurrentStage={setCurrentStage}
-                position={islandPosition}
-                rotation={[0.03, -1.0, -6.3]}
-                scale={islandScale}
-              />
-            </Canvas>
-          </Suspense>
+
+                <Porche
+                  isRotating={isRotating}
+                  setIsRotating={setIsRotating}
+                  setCurrentStage={setCurrentStage}
+                  position={islandPosition}
+                  rotation={[0.03, -1.0, -6.3]}
+                  scale={islandScale}
+                />
+              </Canvas>
+            </Suspense>
+          )}
+          {chooseCar === cars[1] && (
+            <Suspense>
+              <Canvas>
+                <directionalLight position={[3, 5, 5]} intensity={6.5} />
+                <ambientLight intensity={2.5} />
+                <pointLight position={[20, 25, 30]} intensity={2} />
+                <spotLight
+                  position={[10, 0, 0]}
+                  angle={1.15}
+                  penumbra={2}
+                  intensity={5}
+                />
+                {/* <hemisphereLight
+                skyColor="#b1e1ff"
+                groundColor="#0A1D56"
+                intensity={0.5}
+              /> */}
+                <Lamborghini
+                  className="lambo"
+                  isRotating={isRotating}
+                  setIsRotating={setIsRotating}
+                  setCurrentStage={setCurrentStage}
+                  position={carPosition}
+                  rotation={[-1.6, 0, 6.8]}
+                  scale={carScale}
+                />
+              </Canvas>
+            </Suspense>
+          )}
         </section>
       </div>
       <div>
