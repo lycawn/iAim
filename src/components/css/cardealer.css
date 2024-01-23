@@ -187,6 +187,7 @@ html {
 .grid-car {
   background-image: url('../assets/ak.jpg');
   box-shadow: 0 0 15px black;
+  width: auto;
   background-size: cover;
   background-position: contain;
   user-select: none;
@@ -303,6 +304,7 @@ img:hover {
 #section3 {
   background-color: #000;
   background-image: url('../assets/carbg.jpg');
+  width: auto;
   background-size: cover;
   background-position: contain;
   user-select: none;
