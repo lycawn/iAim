@@ -77,7 +77,7 @@ function Cardealer() {
             <Canvas>
               <directionalLight position={[3, 5, 5]} intensity={6.5} />
               <ambientLight intensity={2.5} />
-              <pointLight position={[20, 5, 30]} intensity={2} />
+              <pointLight position={[20, 25, 30]} intensity={2} />
               <spotLight
                 position={[10, 0, 0]}
                 angle={1.15}
@@ -103,26 +103,27 @@ function Cardealer() {
       </div>
       <div>
         <section id="section2">
-          {' '}
-          <div className="grid-car">
-            {' '}
-            <h1 className="akenziH2">Services & Technologies</h1>
-            <div class="image-grid">
+          <div className="s2Bg">
+            <div className="grid-car">
               {' '}
-              <div class="grid-item">
-                <img src="./img/service.png" alt="Image 1" />
-                <p className="akenziP">Tuning </p>
+              <h1 className="akenziH2">Services & Technologies</h1>
+              <div class="image-grid">
+                {' '}
+                <div class="grid-item">
+                  <img src="./img/service.png" alt="Image 1" />
+                  <p className="akenziP">Tuning </p>
+                </div>
+                <div class="grid-item">
+                  <img src="./img/big-data.png" alt="Image 1" />
+                  <p className="akenziP">Interigated new systems chips</p>
+                </div>
+                <div class="grid-item">
+                  <img src="./img/migration.png" alt="Image 1" />
+                  <p className="akenziP">Functionality provsioning</p>
+                </div>
               </div>
-              <div class="grid-item">
-                <img src="./img/big-data.png" alt="Image 1" />
-                <p className="akenziP">Interigated new systems chips</p>
-              </div>
-              <div class="grid-item">
-                <img src="./img/migration.png" alt="Image 1" />
-                <p className="akenziP">Functionality provsioning</p>
-              </div>
-            </div>
-          </div>{' '}
+            </div>{' '}
+          </div>
           <p className="akenziP2">Car Dealership website under construction </p>
         </section>
         <br></br>
@@ -140,7 +141,7 @@ function Cardealer() {
                   height="150px"
                 />
                 <h1 className="akenziH2">{carCards.name}</h1>
-                <div id="carDescHide" className="hidden">
+                <div id="carDescHide" className="">
                   <description className="carDesc">
                     <div class="carDescContent">
                       <p className="akenziP3">{carCards.description}</p>

@@ -38,6 +38,8 @@ function App() {
       navigate('/Portfolio');
     } else if (currentStage === 3) {
       navigate('/Math-survival');
+    } else if (currentStage === 4) {
+      navigate('/Car-dealership');
     }
   };
 
@@ -196,7 +198,7 @@ function App() {
                   <h1 className="introH6">Akenzi Automotives</h1>{' '}
                 </Bounce>{' '}
                 <div className="infoGame">
-                  <h3>A car dealership</h3>
+                  <h3>A car dealership(BETA)</h3>
                   <p>Find out about your luxurious cars</p>
                 </div>
               </Link>

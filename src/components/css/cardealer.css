@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 body {
+  overflow-x: hidden;
 }
 * {
   box-sizing: border-box;
@@ -303,12 +304,13 @@ img:hover {
 }
 #section3 {
   background-color: #000;
-  background-image: url('../assets/carbg.jpg');
+  background-image: url('../assets/car2bg.jpg');
   width: auto;
   background-size: cover;
   background-position: contain;
   user-select: none;
 }
+
 .carDesc {
   display: inline-block;
   position: relative;

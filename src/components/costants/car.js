@@ -10,7 +10,8 @@ export const carCard = [
   {
     name: 'BMW , Luxury S3',
     imgCar: bmw,
-    description: 'test 123123',
-    price: '20.530$',
+    description:
+      'With the luxurious interior of the BMW S3 & The safety it proves , you will defenitely feel like a celebrity in that car',
+    price: '40.530$',
   },
 ];

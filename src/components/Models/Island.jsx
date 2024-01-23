@@ -88,13 +88,13 @@ export function Island({
     if (event.key === 'ArrowLeft') {
       if (!isRotating) setIsRotating(true);
 
-      islandRef.current.rotation.y += 0.015 * Math.PI;
-      rotationSpeed.current = 0.087;
+      islandRef.current.rotation.y += 0.005 * Math.PI;
+      rotationSpeed.current = 0.037;
     } else if (event.key === 'ArrowRight') {
       if (!isRotating) setIsRotating(true);
 
-      islandRef.current.rotation.y -= 0.015 * Math.PI;
-      rotationSpeed.current = -0.087;
+      islandRef.current.rotation.y -= 0.005 * Math.PI;
+      rotationSpeed.current = -0.037;
     }
   }; // Handle touchstart event
   const handleTouchStart = event => {
@@ -137,7 +137,7 @@ export function Island({
       autoRotation.current = 0.001 * Math.PI; // Reset auto-rotation speed
     } else {
       // Increase auto-rotation speed for better responsiveness on mobile
-      autoRotation.current = 0.005 * Math.PI;
+      autoRotation.current = 0.001 * Math.PI;
     }
   }, [isRotating]);
 
@@ -217,10 +217,10 @@ export function Island({
         case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
           setCurrentStage(3);
           break;
-        case normalizedRotation >= 1.7 && normalizedRotation <= 2.6:
+        case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
           setCurrentStage(2);
           break;
-        case normalizedRotation >= 3.25 && normalizedRotation <= 4.55:
+        case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
           setCurrentStage(1);
           break;
         default:

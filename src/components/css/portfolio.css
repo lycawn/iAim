@@ -8,7 +8,6 @@ body {
   background-color: #f7f4dd;
   background-size: cover;
   background-position: contain;
-  overflow: hidden;
 }
 @media (max-width: 768px) {
   body {
