@@ -123,10 +123,7 @@ function Cardealer() {
               </div>
             </div>
           </div>{' '}
-          <p className="akenziP2">
-            Website innovations by Angelos Antoniades, contact me for business
-            inqueries{' '}
-          </p>
+          <p className="akenziP2">Car Dealership website under construction </p>
         </section>
         <br></br>
         <br></br>
