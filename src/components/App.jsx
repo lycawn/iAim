@@ -189,6 +189,19 @@ function App() {
               </Link>
             </form>
           )}
+          {currentStage == 4 && (
+            <form onSubmit={onEnter}>
+              <Link style={{ textDecoration: 'none' }} to="/Math-survival">
+                <Bounce down>
+                  <h1 className="introH6">Akenzi Automotives</h1>{' '}
+                </Bounce>{' '}
+                <div className="infoGame">
+                  <h3>A car dealership</h3>
+                  <p>Find out about your luxurious cars</p>
+                </div>
+              </Link>
+            </form>
+          )}
           {currentStage == null && (
             <h1 className="rotate">
               <img src="./img/arrows.png" width="70px" height="70px" />{' '}

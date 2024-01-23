@@ -69,7 +69,8 @@ video {
 .introH1,
 .introH2,
 .introH3,
-.introh5 {
+.introH5,
+.introH6 {
   background-size: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -107,6 +108,14 @@ link {
   color: #c2b5b4;
   font-family: Roboto condensed;
 }
+.introH6 {
+  background-image: url('../src/components/assets/carbg.jpg');
+  height: 20vh;
+  background-size: cover;
+  background-position: contain;
+  color: #c2b5b4;
+  font-family: Roboto condensed;
+}
 @keyframes float {
   0% {
     transform: translatey(0px);
@@ -134,7 +143,8 @@ link {
   .introH1,
   .introH2,
   .introH3,
-  .introH5 {
+  .introH5,
+  .introH6 {
     width: 140px;
     height: 140px;
   }
