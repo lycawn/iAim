@@ -191,7 +191,7 @@ function App() {
           )}
           {currentStage == 4 && (
             <form onSubmit={onEnter}>
-              <Link style={{ textDecoration: 'none' }} to="/Math-survival">
+              <Link style={{ textDecoration: 'none' }} to="/Car-dealership">
                 <Bounce down>
                   <h1 className="introH6">Akenzi Automotives</h1>{' '}
                 </Bounce>{' '}
