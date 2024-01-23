@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-body {
-  overflow: hidden;
-}
+
 .spinner {
   color: #435560;
   padding-top: 300px;
@@ -68,4 +66,7 @@ body {
   to {
     opacity: 1;
   }
+}
+video {
+  bottom: 20%;
 }

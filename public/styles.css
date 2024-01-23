@@ -6,7 +6,6 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 @media only screen and (min-width: 600px) {
@@ -548,10 +547,10 @@ span {
 
 .button {
   position: relative;
-  background-color: white;
+  background-color: rgb(226, 101, 101);
   height: 4rem;
   width: 4rem;
-  border-radius: 50%;
+  border-radius: 30%;
   position: fixed;
   top: 5vh;
   right: 5vw;

@@ -22,7 +22,7 @@ function Portfolio() {
       screenScale = [0.18, 0.18, 0.18];
       screenPosition = [11, -50.5, 493.4];
     } else {
-      screenScale = [1.08, 1.08, 1.08];
+      screenScale = [1.06, 1.06, 1.06];
       screenPosition = [-51, -200.5, -75.4];
     }
 

@@ -96,6 +96,9 @@ function Header() {
           </li>
           <li className="item">
             <Link to="/Math-survival">Math-survival</Link>
+          </li>{' '}
+          <li className="item">
+            <Link to="/car-dealership">Akenzi Car Dealership</Link>
           </li>
           <li className="item">
             <Link to="/Contact">Get In Contact </Link>

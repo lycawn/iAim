@@ -15,42 +15,6 @@
     <title>Angelos Antoniades || Portfolio</title>
   </head>
   <body>
-    <script src=".src/index.js"></script>
-    <script>
-      score = 0;
-
-      function go(x) {
-        document.textContent({ score: 0 }).animate(
-          { score: x },
-          {
-            duration: 1000,
-            easing: 'linear',
-            step: function (now, fx) {
-              document.getElementById('#score').html(score + Math.floor(now));
-            },
-            queue: false,
-            complete: function (now, fx) {
-              score += x;
-            },
-          }
-        );
-        document
-          .getElementById('#tag')
-          .fadeIn({
-            duration: 700,
-            easing: 'linear',
-            step: function (now, fx) {
-              document.getElementById(this).css('top', -55 * now + 'px');
-            },
-          })
-          .fadeOut({
-            duration: 300,
-            step: function (now, fx) {
-              document.getElementById(this).css('top', -55 * (2 - now) + 'px');
-            },
-          });
-      }
-    </script>
     <div id="root"></div>
   </body>
 </html>
