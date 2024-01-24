@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
 body {
   overflow-x: hidden;
 }
@@ -10,6 +11,7 @@ body {
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 .dealerBody {
   background-color: #272829;
@@ -152,8 +154,8 @@ html {
   align-items: center;
   top: 40%;
   position: relative;
-  color: #db5d1f;
-  font-family: didact;
+  color: #c0531c;
+  font-family: Saira Semi Condensed;
 }
 .akenziP2 {
   display: block;
@@ -164,7 +166,7 @@ html {
   color: #f0eeed;
   margin: 11%;
   user-select: none;
-  font-family: didact;
+  font-family: Saira Semi Condensed;
 }
 .akenziP3 {
   display: block;
@@ -175,7 +177,7 @@ html {
   color: #dcd2d2;
   margin: 11%;
   user-select: none;
-  font-family: didact;
+  font-family: Saira Semi Condensed;
 }
 
 @media (max-width: 768px) {
@@ -185,6 +187,7 @@ html {
     width: 20%;
   }
 }
+
 .grid-car {
   background-image: url('../assets/ak.jpg');
   box-shadow: 0 0 15px black;
@@ -275,7 +278,7 @@ img:hover {
 
 .new-orders {
   background-color: #171818;
-  height: 100vh;
+  height: 130vh;
   width: 50%;
   display: grid;
   box-shadow: 0 0 20px black;
@@ -336,6 +339,7 @@ img:hover {
   }
   .carDesc {
     left: 0;
+    display: hidden;
   }
 }
 .carImg {
@@ -373,6 +377,11 @@ img:hover {
   border-radius: 10px;
   margin: 0 auto;
 }
+@media (max-width: 768px) {
+  .changeCar {
+    position: absolute;
+  }
+}
 .dropdown {
   display: block;
   text-align: center;
@@ -384,4 +393,12 @@ img:hover {
 }
 .view {
   color: #dcd2d2;
+}
+.porche {
+  height: 110vh;
+}
+@media (max-width: 768px) {
+  .porche {
+    height: 60vh;
+  }
 }

@@ -1,9 +1,8 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import './css/Preloader.css';
-import Home from './Home';
 import Koicat from './Models/Koicat';
 import Portfolio from './Portfolio';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 function Preloader3() {
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);

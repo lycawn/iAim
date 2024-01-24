@@ -15,7 +15,7 @@ function Contact() {
 
     if (window.innerWidth < 768) {
       screenScale = [0.3, 0.3, 0.3];
-      screenPosition = [-51, -50.5, 493.4];
+      screenPosition = [-51, -50.5, 413.4];
     } else {
       screenScale = [1.3, 1.3, 1.3];
       screenPosition = [-111, -100.5, -75.4];
@@ -39,7 +39,7 @@ function Contact() {
               <spotLight
                 position={[0, 0, 0]}
                 angle={1.15}
-                penumbra={2}
+                penumbra={3}
                 intensity={1}
               />
               <hemisphereLight
@@ -53,7 +53,7 @@ function Contact() {
                 setIsRotating={setIsRotating}
                 setCurrentStage={setCurrentStage}
                 position={islandPosition}
-                rotation={[1.09, -1.0, -6.3]}
+                rotation={[1.09, -0.6, -6.3]}
                 scale={islandScale}
               />
             </Canvas>

@@ -1,9 +1,5 @@
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { useEffect, useState } from 'react';
 import './css/Preloader.css';
-import Home from './Home';
-import Koicat from './Models/Koicat';
-import Portfolio from './Portfolio';
-import { Canvas, useFrame } from '@react-three/fiber';
 import Vvideo from './assets/carVideo.mp4';
 import Cardealer from './Cardealer';
 
@@ -34,7 +30,7 @@ function Preloader3() {
         <>
           {!loading ? (
             <div className="spinner">
-              <span>Akenzi Automotives</span>
+              <span>Akenzi</span>
             </div>
           ) : (
             <div className="spinner">

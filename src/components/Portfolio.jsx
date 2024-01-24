@@ -7,7 +7,6 @@ import Header from './Header';
 import React, { useState, Suspense, useEffect } from 'react';
 import { Canvas } from 'react-three-fiber';
 import Tokyo from './Models/Tokyo';
-import { Sky } from './Models/Sky';
 import './css/portfolio.css';
 import { experience, skills } from './costants/constant';
 function Portfolio() {

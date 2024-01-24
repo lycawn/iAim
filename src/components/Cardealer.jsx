@@ -6,11 +6,12 @@ import slash from './assetsM/slash.mp3';
 import { carCard } from './costants/car';
 import Header from './Header';
 import Lamborghini from './Models/Lamborghini';
+import BMW from './Models/BMW';
 function Cardealer() {
   const slashSound = new Audio(slash);
   const removeHidden = document.getElementById('carDescHide');
   const [currentStage, setCurrentStage] = useState(null);
-  const [cars, setCars] = useState(['Porche', 'Lamborghini']);
+  const [cars, setCars] = useState(['Porche', 'Lamborghini', 'BMW']);
   const [chooseCar, setChooseCar] = useState('Porche');
   // rotating boolean
   const [isRotating, setIsRotating] = useState(false);
@@ -36,13 +37,27 @@ function Cardealer() {
       screenScale = [80.3, 80.3, 80.3];
       screenPosition = [-51, -70.5, -175.4];
     } else {
-      screenScale = [121.5, 121.5, 121.5];
-      screenPosition = [-71, -185.5, -255.4];
+      screenScale = [91.5, 91.5, 91.5];
+      screenPosition = [-91, -185.5, -255.4];
     }
 
     return [screenScale, screenPosition];
   };
   const [carScale, carPosition] = adjustCarForScreenSize();
+  const adjustIslandForScreenSize2 = () => {
+    let screenScale, screenPosition;
+
+    if (window.innerWidth < 768) {
+      screenScale = [80.3, 80.3, 80.3];
+      screenPosition = [21, -30.5, -175.4];
+    } else {
+      screenScale = [101.5, 101.5, 101.5];
+      screenPosition = [-11, -140.5, -125.4];
+    }
+
+    return [screenScale, screenPosition, currentStage];
+  };
+  const [islandScale2, islandPosition2] = adjustIslandForScreenSize2();
   useEffect(() => {
     const handleKeyDown = event => {
       if (event.key === 'ArrowDown') {
@@ -72,6 +87,8 @@ function Cardealer() {
   function carChoice() {
     if (chooseCar === 'Porche') {
       setChooseCar('Lamborghini');
+    } else if (chooseCar === 'Lamborghini') {
+      setChooseCar('BMW');
     } else {
       setChooseCar('Porche');
     }
@@ -94,15 +111,15 @@ function Cardealer() {
           <p className="akenziP">
             Innovative automations with luxurious interiors
           </p>
-          <a href="#section2">
+          {/* <a href="#section2">
             <img className="imgScroll" src="./img/sd.jpg" />
-          </a>{' '}
+          </a>{' '} */}
           <div class="dropdown">
             <div class="dropdown-content">
               <br></br>
               <a onClick={carChoice}>{chooseCar}</a>
               <button className="changeCar" onClick={carChoice}>
-                <p className="view"> change view</p>
+                <p className="view"> change model</p>
               </button>
             </div>
           </div>
@@ -147,11 +164,11 @@ function Cardealer() {
                   penumbra={2}
                   intensity={5}
                 />
-                {/* <hemisphereLight
-                skyColor="#b1e1ff"
-                groundColor="#0A1D56"
-                intensity={0.5}
-              /> */}
+                <hemisphereLight
+                  skyColor="#b1e1ff"
+                  groundColor="#0A1D56"
+                  intensity={0.5}
+                />
                 <Lamborghini
                   className="lambo"
                   isRotating={isRotating}
@@ -160,6 +177,35 @@ function Cardealer() {
                   position={carPosition}
                   rotation={[-1.6, 0, 6.8]}
                   scale={carScale}
+                />
+              </Canvas>
+            </Suspense>
+          )}
+          {chooseCar === cars[2] && (
+            <Suspense>
+              <Canvas>
+                <directionalLight position={[5, 15, 15]} intensity={14.5} />
+                <ambientLight intensity={2.5} />
+                <pointLight position={[20, 25, 30]} intensity={3} />
+                <spotLight
+                  position={[10, 0, 0]}
+                  angle={1.15}
+                  penumbra={2}
+                  intensity={6}
+                />
+                {/* <hemisphereLight
+                skyColor="#b1e1ff"
+                groundColor="#0A1D56"
+                intensity={0.5}
+              /> */}
+
+                <BMW
+                  isRotating={isRotating}
+                  setIsRotating={setIsRotating}
+                  setCurrentStage={setCurrentStage}
+                  position={islandPosition2}
+                  rotation={[0.23, -1.0, -6.3]}
+                  scale={islandScale2}
                 />
               </Canvas>
             </Suspense>
@@ -206,7 +252,7 @@ function Cardealer() {
                   height="150px"
                 />
                 <h1 className="akenziH2">{carCards.name}</h1>
-                <div id="carDescHide" className="">
+                <div id="carDescHide" className="hidden">
                   <description className="carDesc">
                     <div class="carDescContent">
                       <p className="akenziP3">{carCards.description}</p>

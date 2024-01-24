@@ -144,38 +144,38 @@ export function Room({
     }
   };
 
-  useEffect(() => {
-    // Add event listeners for pointer and keyboard events
-    const canvas = gl.domElement;
-    canvas.addEventListener('pointerdown', handlePointerDown);
-    canvas.addEventListener('pointerup', handlePointerUp);
-    canvas.addEventListener('pointermove', handlePointerMove);
-    window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('keyup', handleKeyUp);
-    canvas.addEventListener('touchstart', handleTouchStart);
-    canvas.addEventListener('touchend', handleTouchEnd);
-    canvas.addEventListener('touchmove', handleTouchMove);
-    canvas.addEventListener('wheel', handleMouseWheel);
+  // useEffect(() => {
+  //   // Add event listeners for pointer and keyboard events
+  //   const canvas = gl.domElement;
+  //   canvas.addEventListener('pointerdown', handlePointerDown);
+  //   canvas.addEventListener('pointerup', handlePointerUp);
+  //   canvas.addEventListener('pointermove', handlePointerMove);
+  //   window.addEventListener('keydown', handleKeyDown);
+  //   window.addEventListener('keyup', handleKeyUp);
+  //   canvas.addEventListener('touchstart', handleTouchStart);
+  //   canvas.addEventListener('touchend', handleTouchEnd);
+  //   canvas.addEventListener('touchmove', handleTouchMove);
+  //   canvas.addEventListener('wheel', handleMouseWheel);
 
-    // Remove event listeners when component unmounts
-    return () => {
-      canvas.removeEventListener('pointerdown', handlePointerDown);
-      canvas.removeEventListener('pointerup', handlePointerUp);
-      canvas.removeEventListener('pointermove', handlePointerMove);
-      window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('keyup', handleKeyUp);
-      canvas.removeEventListener('pointerdown', handlePointerDown);
-      canvas.removeEventListener('pointerup', handlePointerUp);
-      canvas.removeEventListener('pointermove', handlePointerMove);
-      canvas.removeEventListener('wheel', handleMouseWheel);
-    };
-  }, [
-    gl,
-    handlePointerDown,
-    handlePointerUp,
-    handlePointerMove,
-    handleMouseWheel,
-  ]);
+  //   // Remove event listeners when component unmounts
+  //   return () => {
+  //     canvas.removeEventListener('pointerdown', handlePointerDown);
+  //     canvas.removeEventListener('pointerup', handlePointerUp);
+  //     canvas.removeEventListener('pointermove', handlePointerMove);
+  //     window.removeEventListener('keydown', handleKeyDown);
+  //     window.removeEventListener('keyup', handleKeyUp);
+  //     canvas.removeEventListener('pointerdown', handlePointerDown);
+  //     canvas.removeEventListener('pointerup', handlePointerUp);
+  //     canvas.removeEventListener('pointermove', handlePointerMove);
+  //     canvas.removeEventListener('wheel', handleMouseWheel);
+  //   };
+  // }, [
+  //   gl,
+  //   handlePointerDown,
+  //   handlePointerUp,
+  //   handlePointerMove,
+  //   handleMouseWheel,
+  // ]);
 
   // This function is called on each frame update
   useFrame(() => {
