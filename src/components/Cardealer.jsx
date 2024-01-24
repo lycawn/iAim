@@ -264,6 +264,13 @@ function Cardealer() {
           </div>
         </section>
       </div>{' '}
+      <section id="section4">
+        <div className="Contact">
+          <div className="copyrights">
+            <p>©Akenzi by Angelos Antoniades 2024</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

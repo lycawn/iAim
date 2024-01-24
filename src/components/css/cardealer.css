@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
 body {
   overflow-x: hidden;
 }
@@ -66,7 +67,6 @@ html {
   display: grid;
   text-align: center;
   left: 50%;
-
   position: absolute;
   transform: translateX(-50%);
   place-content: center;
@@ -367,7 +367,7 @@ img:hover {
 }
 .changeCar {
   border: none;
-  width: 80px;
+  width: 100px;
   background: transparent;
   cursor: pointer;
   font-size: 3vh;
@@ -381,6 +381,9 @@ img:hover {
   .changeCar {
     position: absolute;
   }
+  .changeCar:hover {
+    text-shadow: 0 0 15px black;
+  }
 }
 .dropdown {
   display: block;
@@ -393,6 +396,7 @@ img:hover {
 }
 .view {
   color: #dcd2d2;
+  font-family: orbitron;
 }
 .porche {
   height: 110vh;
@@ -401,4 +405,19 @@ img:hover {
   .porche {
     height: 60vh;
   }
+}
+
+/* FOOTER */
+#section4 {
+  position: relative;
+  z-index: 1;
+}
+.Contact {
+  background-color: #18d366;
+  height: 10vh;
+}
+.copyrights {
+  top: 45%;
+  position: relative;
+  text-align: center;
 }

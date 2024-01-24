@@ -1,4 +1,4 @@
-import { carrera, bmw } from '../carIcons/exportsCar';
+import { carrera, bmw, lambo } from '../carIcons/exportsCar';
 
 export const carCard = [
   {
@@ -13,5 +13,12 @@ export const carCard = [
     description:
       'With the luxurious interior of the BMW S3 & The safety it proves , you will defenitely feel like a celebrity in that car',
     price: '40.530$',
+  },
+  {
+    name: 'Lamborghini Revuelto',
+    imgCar: lambo,
+    description:
+      'With the luxurious interior of the BMW S3 & The safety it proves , you will defenitely feel like a celebrity in that car',
+    price: '140.530$',
   },
 ];
