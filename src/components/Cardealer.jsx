@@ -1,6 +1,6 @@
 import React, { useEffect, Suspense, useState } from 'react';
 import './css/cardealer.css';
-import { Canvas } from 'react-three-fiber';
+import { Canvas, Environment } from 'react-three-fiber';
 import Porche from './Models/Porche';
 import slash from './assetsM/slash.mp3';
 import { carCard } from './costants/car';
@@ -184,21 +184,20 @@ function Cardealer() {
           {chooseCar === cars[2] && (
             <Suspense>
               <Canvas>
-                <directionalLight position={[5, 15, 15]} intensity={14.5} />
-                <ambientLight intensity={2.5} />
-                <pointLight position={[20, 25, 30]} intensity={3} />
+                <directionalLight position={[2, 53, 13]} intensity={10} />
+                <ambientLight intensity={1.5} />
+                <pointLight position={[10, 45, 50]} intensity={30} />
                 <spotLight
                   position={[10, 0, 0]}
-                  angle={1.15}
-                  penumbra={2}
-                  intensity={6}
+                  angle={Math.PI / 4}
+                  penumbra={0.1}
+                  intensity={5}
                 />
-                {/* <hemisphereLight
-                skyColor="#b1e1ff"
-                groundColor="#0A1D56"
-                intensity={0.5}
-              /> */}
-
+                <hemisphereLight
+                  skyColor="#b1e1ff"
+                  groundColor="#0A1D56"
+                  intensity={1}
+                />
                 <BMW
                   isRotating={isRotating}
                   setIsRotating={setIsRotating}
