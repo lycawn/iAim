@@ -40,6 +40,8 @@ function App() {
       navigate('/Math-survival');
     } else if (currentStage === 4) {
       navigate('/Car-dealership');
+    } else if (currentStage === 0) {
+      navigate('https://vulture-main.netlify.app');
     }
   };
 
@@ -204,6 +206,7 @@ function App() {
               </Link>
             </form>
           )}
+
           {currentStage == null && (
             <h1 className="rotate">
               <img src="./img/arrows.png" width="70px" height="70px" />{' '}
