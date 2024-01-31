@@ -38,23 +38,23 @@ function Header() {
   const currentHobby = hobbies[learnAbout];
 
   useEffect(() => {
-    fetch(
-      'https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random',
-      {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key':
-            'ac92a4996dmshe8026a968b0cce8p19c6dajsn745a18a85abc',
-          'X-Rapid-Host': 'matchilling-chuck-norris-jokes-v1.p.rapidapi.com',
-        },
-      }
-    )
-      .then(response => response.json())
-      .then(data => {
-        setChuckNorris(data);
-        console.log(data);
-      })
-      .catch(error => console.log(error));
+    // fetch(
+    //   'https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random',
+    //   {
+    //     method: 'GET',
+    //     headers: {
+    //       'X-RapidAPI-Key':
+    //         'ac92a4996dmshe8026a968b0cce8p19c6dajsn745a18a85abc',
+    //       'X-Rapid-Host': 'matchilling-chuck-norris-jokes-v1.p.rapidapi.com',
+    //     },
+    //   }
+    // )
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     setChuckNorris(data);
+    //     console.log(data);
+    //   })
+    //   .catch(error => console.log(error));
     // Event listener for 'M' key press
     const handleKeyPress = event => {
       if (event.key === 'm' || event.key === 'M') {
@@ -92,7 +92,7 @@ function Header() {
             <Link to="/Wonderland-aim">Wonderland aim</Link>
           </li>
           <li className="item">
-            <Link to="/Portfolio">Portfolio</Link>
+            <Link to="/Portfolio">Curriculum Vitae</Link>
           </li>
           <li className="item">
             <Link to="/Math-survival">Math-survival</Link>
@@ -109,11 +109,11 @@ function Header() {
             <Link to="/Contact">Get In Contact </Link>
           </li>
         </ul>
-        <div className="weather">
+        {/* <div className="weather">
           <h1>Daily chuck Norris joke</h1>
           {chuckNorris.value?.length > 0 && <p>{chuckNorris.value}</p>}
           <p>{currentTime}</p>
-        </div>
+        </div> */}
         <div className="hobbies">
           <div>
             <h1>{currentHobby ? currentHobby.hobby : ''} </h1>
