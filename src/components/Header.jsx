@@ -84,13 +84,6 @@ function Header() {
           <li class="item">
             <Link to="/">Home</Link>
           </li>
-          <li class="item">
-            <Link to="https://www.buymeacoffee.com/angelosant">Buy me </Link>
-            <img src="./img/coffee.png" height="60px" width="60px" />
-          </li>
-          <li className="item">
-            <Link to="/Wonderland-aim">Wonderland aim</Link>
-          </li>
           <li className="item">
             <Link to="/Portfolio">Curriculum Vitae</Link>
           </li>

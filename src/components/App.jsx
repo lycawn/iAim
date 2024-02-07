@@ -153,7 +153,7 @@ function App() {
         </div>
         <Player /> <Header />
         <section className="showcase">
-          {currentStage == 1 && (
+          {/* {currentStage == 1 && (
             <form onSubmit={onEnter}>
               <Link style={{ textDecoration: 'none' }} to="/Home">
                 <Bounce down>
@@ -166,7 +166,7 @@ function App() {
                 </div>
               </Link>
             </form>
-          )}
+          )} */}
           {currentStage == 2 && (
             <form onSubmit={onEnter}>
               <Link style={{ textDecoration: 'none' }} to="/Portfolio">
