@@ -92,6 +92,11 @@ function Header() {
           </li>{' '}
           <li className="item">
             <Link to="/car-dealership">Akenzi Car Dealership</Link>
+          </li>{' '}
+          <li className="item">
+            <Link to="https://pandacoffeeshop.netlify.app/">
+              Panda Coffee Shop
+            </Link>
           </li>
           <li className="item">
             <Link to="https://vulture-main.netlify.app">

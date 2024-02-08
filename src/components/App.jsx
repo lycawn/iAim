@@ -153,20 +153,22 @@ function App() {
         </div>
         <Player /> <Header />
         <section className="showcase">
-          {/* {currentStage == 1 && (
+          {currentStage == 1 && (
             <form onSubmit={onEnter}>
-              <Link style={{ textDecoration: 'none' }} to="/Home">
+              <Link
+                style={{ textDecoration: 'none' }}
+                to="https://pandacoffeeshop.netlify.app/"
+              >
                 <Bounce down>
-                  <h1 className="introH1">Wonderland iAim</h1>
+                  <h1 className="introH1">Panda Coffee Shop</h1>
                 </Bounce>
                 <div className="infoGame">
-                  <h1>Wonderland Aim(BETA) </h1>
-                  <p>Do not get overwhelmed by 30 Enemies</p>
-                  <p>Score as many points as you can</p>
+                  <h1>A coffee shop </h1>
+                  <p>A business model</p>
                 </div>
               </Link>
             </form>
-          )} */}
+          )}
           {currentStage == 2 && (
             <form onSubmit={onEnter}>
               <Link style={{ textDecoration: 'none' }} to="/Portfolio">
